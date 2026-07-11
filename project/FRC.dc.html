@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Inter', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; color:#1D1D1F; }
+  a { color: #0066CC; text-decoration: none; }
+  a:hover { color: #0B1F3A; }
+  [data-dd]:hover [data-dd-line] { opacity: 1; }
+  [data-dd]:hover [data-dd-panel] { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+  [data-dd-panel] a:hover { background: #EEF3FF; }
+</style>
+</helmet>
+
+<div style="font-family:'Inter',-apple-system,sans-serif; background:#FFFFFF;" data-screen-label="FRC">
+
+  <div style="background:#0B1F3A;">
+    <header style="max-width:1180px; margin:0 auto; padding:0 28px; height:60px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
+      <a href="Accueil.dc.html" style="display:flex; align-items:center; gap:9px;">
+        <img src="assets/img/brand/logo-robolyon-blue.svg" alt="Logo Robo'Lyon" style="height:22px; width:auto; filter:brightness(0) invert(1);">
+        <span style="font-weight:600; font-size:14.5px; letter-spacing:-0.01em; color:#fff;">Robo'Lyon</span>
+      </a>
+      <nav style="display:flex; align-items:center; gap:30px;">
+        <a href="Accueil.dc.html" style="font-weight:400; font-size:13px; color:#C7D2E8;">Accueil</a>
+        <div data-dd style="position:relative; padding:8px 0;">
+          <a href="L'association.dc.html" style="display:flex; align-items:center; gap:5px; cursor:pointer; font-weight:400; font-size:13px; color:#C7D2E8;">L'association<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+          <div data-dd-line style="position:absolute; left:0; right:0; bottom:0; height:2px; background:#D62828; opacity:0; transition:opacity .15s;"></div>
+          <div data-dd-panel style="position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(4px); background:#fff; border-radius:12px; box-shadow:0 20px 44px rgba(11,31,58,0.18); padding:8px; min-width:190px; z-index:50; opacity:0; visibility:hidden; transition:opacity .15s, transform .15s;">
+            <a href="L'association.dc.html#histoire" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">Notre histoire</a>
+            <a href="L'association.dc.html#activites" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">Activités</a>
+            <a href="L'association.dc.html#valeurs" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">Valeurs</a>
+            <a href="L'association.dc.html#missions" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">Missions</a>
+          </div>
+        </div>
+        <div data-dd style="position:relative; padding:8px 0;">
+          <a href="Nos équipes.dc.html" style="display:flex; align-items:center; gap:5px; cursor:pointer; font-weight:600; font-size:13px; color:#fff;">Nos équipes<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+          <div data-dd-line style="position:absolute; left:0; right:0; bottom:0; height:2px; background:#D62828;"></div>
+          <div data-dd-panel style="position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(4px); background:#fff; border-radius:12px; box-shadow:0 20px 44px rgba(11,31,58,0.18); padding:8px; min-width:200px; z-index:50; opacity:0; visibility:hidden; transition:opacity .15s, transform .15s;">
+            <a href="FRC.dc.html" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">FRC — Équipe 5553</a>
+            <a href="FTC.dc.html" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">FTC — 4 équipes</a>
+            <a href="FTC 23147.dc.html" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">FTC 23147</a>
+            <a href="FTC 26762.dc.html" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">FTC 26762</a>
+            <a href="FTC 26796.dc.html" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">FTC 26796</a>
+          </div>
+        </div>
+        <a href="Actus.dc.html" style="font-weight:400; font-size:13px; color:#C7D2E8;">Actus</a>
+        <a href="Sponsors.dc.html" style="font-weight:400; font-size:13px; color:#C7D2E8;">Sponsors</a>
+        <a href="Contact.dc.html" style="font-weight:400; font-size:13px; color:#C7D2E8;">Contact</a>
+      </nav>
+      <a href="Nous soutenir.dc.html" style="background:#fff; color:#0B1F3A; font-weight:600; font-size:12.5px; padding:8px 18px; border-radius:980px; white-space:nowrap;">Nous soutenir</a>
+    </header>
+    <section style="padding:56px 28px 48px; text-align:center;">
+      <div style="display:inline-flex; gap:28px; margin-bottom:20px;">
+        <span style="font-weight:600; font-size:13px; color:#8FA0C4;"><a href="Nos équipes.dc.html" style="color:#8FA0C4;">‹ Nos équipes</a></span>
+      </div>
+      <div style="display:inline-block; color:#D62828; background:#fff; font-weight:700; font-size:11.5px; padding:5px 14px; border-radius:980px; text-transform:uppercase; letter-spacing:0.03em; margin-bottom:18px;">En pause cette saison</div>
+      <h1 style="font-weight:700; font-size:clamp(32px,4vw,46px); letter-spacing:-0.02em; color:#fff; margin:0 0 14px;">FRC — Équipe 5553</h1>
+      <p style="font-size:16.5px; color:#A9B6D6; max-width:640px; margin:0 auto; line-height:1.55;">FIRST® Robotics Competition — première équipe française à avoir rejoint la compétition, en 2014.</p>
+    </section>
+  </div>
+
+  <!-- ===== Présentation ===== -->
+  <section style="padding:64px 28px 56px; max-width:900px; margin:0 auto;">
+    <p style="font-size:16px; line-height:1.7; color:#3A3A3C; margin:0;">Chaque saison, l'équipe 5553 conçoit, fabrique et pilote deux robots rigoureusement identiques pour affronter d'autres équipes du monde entier — avec plusieurs qualifications au championnat mondial FIRST®. Cette année, nous mettons la FRC en pause pour concentrer nos ressources sur le développement de nos équipes FTC, qui passent de 3 à 4 équipes. Un retour de la FRC est prévu dès que l'encadrement le permettra.</p>
+  </section>
+
+  <!-- ===== Palmarès ===== -->
+  <section style="background:#F5F5F7; padding:64px 28px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <h2 style="font-weight:700; font-size:26px; color:#1D1D1F; margin:0 0 24px; letter-spacing:-0.015em;">Palmarès</h2>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:#D2D2D7; border:1px solid #D2D2D7; border-radius:16px; overflow:hidden;">
+        <div style="background:#fff; padding:24px;"><h4 style="font-weight:700; font-size:14.5px; color:#1D1D1F; margin:0 0 6px;">Qualifications au championnat mondial</h4><p style="font-size:13px; color:#6E6E73; margin:0;">2017 (St. Louis), 2018 (Detroit), 2020 (Houston), 2023 (Houston)</p></div>
+        <div style="background:#fff; padding:24px;"><h4 style="font-weight:700; font-size:14.5px; color:#1D1D1F; margin:0 0 6px;">Victoire régionale</h4><p style="font-size:13px; color:#6E6E73; margin:0;">Régionale de Montréal, 2017</p></div>
+        <div style="background:#fff; padding:24px;"><h4 style="font-weight:700; font-size:14.5px; color:#1D1D1F; margin:0 0 6px;">Prix Innovation</h4><p style="font-size:13px; color:#6E6E73; margin:0;">Innovation Challenge, 2021</p></div>
+        <div style="background:#fff; padding:24px;"><h4 style="font-weight:700; font-size:14.5px; color:#1D1D1F; margin:0 0 6px;">Prix Chairman's &amp; Impact</h4><p style="font-size:13px; color:#6E6E73; margin:0;">2017 et 2023</p></div>
+        <div style="background:#fff; padding:24px;"><h4 style="font-weight:700; font-size:14.5px; color:#1D1D1F; margin:0 0 6px;">Engineering Inspiration</h4><p style="font-size:13px; color:#6E6E73; margin:0;">2018 et 2020</p></div>
+        <div style="background:#fff; padding:24px;"><h4 style="font-weight:700; font-size:14.5px; color:#1D1D1F; margin:0 0 6px;">Prix Créativité</h4><p style="font-size:13px; color:#6E6E73; margin:0;">2024</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Le robot ===== -->
+  <section style="padding:64px 28px; max-width:1180px; margin:0 auto;">
+    <h2 style="font-weight:700; font-size:26px; color:#1D1D1F; margin:0 0 24px; letter-spacing:-0.015em;">Le robot — Tenor (saison 2024)</h2>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;">
+      <div>
+        <img src="assets/img/robots/tenor2024-300x225.png" alt="Robot Tenor" style="width:100%; aspect-ratio:4/3; object-fit:contain; background:#F5F5F7; border-radius:16px; padding:20px;">
+      </div>
+      <div>
+        <p style="font-size:15.5px; line-height:1.7; color:#3A3A3C; margin:0 0 24px;">Tenor est conçu pour saisir, transporter et empiler des notes de jeu tout en grimpant sur la structure de fin de match — mécanique à chaîne, bras articulé et système pneumatique, piloté par une programmation embarquée en Java (WPILib).</p>
+        <div style="display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="#" style="display:inline-flex; align-items:center; gap:8px; border:1px solid #D2D2D7; color:#1D1D1F; font-weight:600; font-size:13.5px; padding:10px 20px; border-radius:980px; transition:all .15s;" style-hover="background:#0B1F3A; color:#fff; border-color:#0B1F3A;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            Voir le code
+          </a>
+          <a href="#" style="display:inline-flex; align-items:center; gap:8px; border:1px solid #D2D2D7; color:#1D1D1F; font-weight:600; font-size:13.5px; padding:10px 20px; border-radius:980px; transition:all .15s;" style-hover="background:#0B1F3A; color:#fff; border-color:#0B1F3A;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            Voir le modèle 3D
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:0 28px 64px; max-width:1180px; margin:0 auto;">
+    <h3 style="font-weight:700; font-size:19px; color:#1D1D1F; margin:0 0 20px; letter-spacing:-0.01em;">Nos robots au fil des saisons</h3>
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:16px;">
+      <sc-for list="{{ robots }}" as="r" hint-placeholder-count="5">
+        <div style="border:1px solid #D2D2D7; border-radius:14px; padding:16px; text-align:center;">
+          <img src="{{ r.img }}" alt="Robot {{ r.name }}" style="width:100%; aspect-ratio:1; object-fit:contain; margin-bottom:12px;">
+          <div style="display:inline-block; color:#6E6E73; font-size:11px; font-weight:600; margin-bottom:6px;">{{ r.year }}</div>
+          <div style="font-size:13.5px; font-weight:700; color:#1D1D1F;">{{ r.name }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ===== Effectif & rôles ===== -->
+  <section style="background:#F5F5F7; padding:64px 28px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <h2 style="font-weight:700; font-size:26px; color:#1D1D1F; margin:0 0 8px; letter-spacing:-0.015em;">L'équipe</h2>
+      <p style="color:#6E6E73; font-size:14.5px; margin:0 0 32px;">Rôles et responsables actuels — photos et noms à compléter par l'équipe.</p>
+      <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:16px;">
+        <sc-for list="{{ members }}" as="m" hint-placeholder-count="5">
+          <div style="background:#fff; border:1px solid #D2D2D7; border-radius:14px; padding:18px; text-align:center;">
+            <div style="width:64px; height:64px; border-radius:50%; overflow:hidden; margin:0 auto 12px;">
+              <image-slot id="frc-member-{{ $index }}" shape="circle" placeholder="Photo"></image-slot>
+            </div>
+            <div style="font-weight:700; font-size:13.5px; color:#1D1D1F; margin-bottom:4px;">{{ m.name }}</div>
+            <div style="font-size:12px; color:#6E6E73;">{{ m.role }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#F5F5F7; color:#6E6E73; padding:48px 28px 24px; border-top:1px solid #D2D2D7;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; margin-bottom:32px;">
+        <div>
+          <div style="display:flex; align-items:center; gap:9px; margin-bottom:14px;">
+            <img src="assets/img/brand/logo-robolyon-blue.svg" alt="Logo Robo'Lyon" style="height:20px;">
+            <span style="font-weight:600; font-size:14px; color:#1D1D1F;">Robo'Lyon</span>
+          </div>
+          <p style="font-size:13px; line-height:1.6; max-width:320px; margin:0;">Association loi 1901 de robotique de compétition FIRST®, basée à Neuville-sur-Saône. Première équipe française à avoir participé à la FRC.</p>
+        </div>
+        <div>
+          <h4 style="color:#1D1D1F; font-size:13px; font-weight:600; margin:0 0 14px;">Navigation</h4>
+          <div style="display:flex; flex-direction:column; gap:9px; font-size:13px;">
+            <a href="L'association.dc.html" style="color:#6E6E73;">L'association</a>
+            <a href="Nos équipes.dc.html" style="color:#6E6E73;">Nos équipes</a>
+            <a href="Actus.dc.html" style="color:#6E6E73;">Actus</a>
+            <a href="Sponsors.dc.html" style="color:#6E6E73;">Sponsors</a>
+            <a href="Contact.dc.html" style="color:#6E6E73;">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="color:#1D1D1F; font-size:13px; font-weight:600; margin:0 0 14px;">Contact</h4>
+          <div style="font-size:13px; line-height:1.7; margin-bottom:14px;">22 avenue Gambetta<br>69250 Neuville-sur-Saône<br><a href="mailto:contact@robolyon.com" style="color:#6E6E73;">contact@robolyon.com</a></div>
+          <div style="display:flex; gap:10px;">
+            <a href="#" aria-label="Instagram" style="width:30px; height:30px; border-radius:50%; background:#E8E8ED; display:flex; align-items:center; justify-content:center; font-size:11px; color:#1D1D1F; font-weight:600;">IG</a>
+            <a href="#" aria-label="Facebook" style="width:30px; height:30px; border-radius:50%; background:#E8E8ED; display:flex; align-items:center; justify-content:center; font-size:11px; color:#1D1D1F; font-weight:600;">FB</a>
+            <a href="#" aria-label="YouTube" style="width:30px; height:30px; border-radius:50%; background:#E8E8ED; display:flex; align-items:center; justify-content:center; font-size:11px; color:#1D1D1F; font-weight:600;">YT</a>
+            <a href="#" aria-label="LinkedIn" style="width:30px; height:30px; border-radius:50%; background:#E8E8ED; display:flex; align-items:center; justify-content:center; font-size:11px; color:#1D1D1F; font-weight:600;">in</a>
+          </div>
+        </div>
+      </div>
+      <div style="border-top:1px solid #D2D2D7; padding-top:16px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-size:12px;">
+        <span>© 2026 Robo'Lyon. Tous droits réservés.</span>
+        <a href="Espace admin.dc.html" style="color:#6E6E73;">Espace admin</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const robots = [
+      { year: '2024', name: 'Tenor', img: 'assets/img/robots/tenor2024-300x225.png' },
+      { year: '2019', name: 'Antares 2', img: 'assets/img/robots/antares_800x800-300x300.png' },
+      { year: '2018', name: 'Archimède', img: 'assets/img/robots/archimede_800x800-300x300.png' },
+      { year: '2018', name: 'Scorpion', img: 'assets/img/robots/scorpion_800x800-300x300.png' },
+      { year: '2017', name: 'Zeppelin', img: 'assets/img/robots/zeppelin_800x800-300x300.png' },
+    ];
+    const members = [
+      { name: 'À compléter', role: 'Capitaine d\u2019équipe' },
+      { name: 'À compléter', role: 'Responsable mécanique' },
+      { name: 'À compléter', role: 'Responsable électronique' },
+      { name: 'À compléter', role: 'Responsable programmation' },
+      { name: 'À compléter', role: 'Mentor référent' },
+    ];
+    return { robots, members };
+  }
+}
+
+</script>
+</body>
+</html>

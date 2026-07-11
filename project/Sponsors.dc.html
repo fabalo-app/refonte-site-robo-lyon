@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Inter', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; color:#1D1D1F; }
+  a { color: #0066CC; text-decoration: none; }
+  a:hover { color: #0B1F3A; }
+  [data-dd]:hover [data-dd-line] { opacity: 1; }
+  [data-dd]:hover [data-dd-panel] { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+  [data-dd-panel] a:hover { background: #EEF3FF; }
+</style>
+</helmet>
+
+<div style="font-family:'Inter',-apple-system,sans-serif; background:#FFFFFF;" data-screen-label="Sponsors">
+
+  <div style="background:#0B1F3A;">
+    <header style="max-width:1180px; margin:0 auto; padding:0 28px; height:60px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
+      <a href="Accueil.dc.html" style="display:flex; align-items:center; gap:9px;">
+        <img src="assets/img/brand/logo-robolyon-blue.svg" alt="Logo Robo'Lyon" style="height:22px; width:auto; filter:brightness(0) invert(1);">
+        <span style="font-weight:600; font-size:14.5px; letter-spacing:-0.01em; color:#fff;">Robo'Lyon</span>
+      </a>
+      <nav style="display:flex; align-items:center; gap:30px;">
+        <a href="Accueil.dc.html" style="font-weight:400; font-size:13px; color:#C7D2E8;">Accueil</a>
+        <div data-dd style="position:relative; padding:8px 0;">
+          <a href="L'association.dc.html" style="display:flex; align-items:center; gap:5px; cursor:pointer; font-weight:400; font-size:13px; color:#C7D2E8;">L'association<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+          <div data-dd-line style="position:absolute; left:0; right:0; bottom:0; height:2px; background:#D62828; opacity:0; transition:opacity .15s;"></div>
+          <div data-dd-panel style="position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(4px); background:#fff; border-radius:12px; box-shadow:0 20px 44px rgba(11,31,58,0.18); padding:8px; min-width:190px; z-index:50; opacity:0; visibility:hidden; transition:opacity .15s, transform .15s;">
+            <a href="L'association.dc.html#histoire" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">Notre histoire</a>
+            <a href="L'association.dc.html#activites" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">Activités</a>
+            <a href="L'association.dc.html#valeurs" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">Valeurs</a>
+            <a href="L'association.dc.html#missions" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">Missions</a>
+          </div>
+        </div>
+        <div data-dd style="position:relative; padding:8px 0;">
+          <a href="Nos équipes.dc.html" style="display:flex; align-items:center; gap:5px; cursor:pointer; font-weight:400; font-size:13px; color:#C7D2E8;">Nos équipes<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+          <div data-dd-line style="position:absolute; left:0; right:0; bottom:0; height:2px; background:#D62828; opacity:0; transition:opacity .15s;"></div>
+          <div data-dd-panel style="position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(4px); background:#fff; border-radius:12px; box-shadow:0 20px 44px rgba(11,31,58,0.18); padding:8px; min-width:200px; z-index:50; opacity:0; visibility:hidden; transition:opacity .15s, transform .15s;">
+            <a href="FRC.dc.html" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">FRC — Équipe 5553</a>
+            <a href="FTC.dc.html" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">FTC — 4 équipes</a>
+            <a href="FTC 23147.dc.html" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">FTC 23147</a>
+            <a href="FTC 26762.dc.html" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">FTC 26762</a>
+            <a href="FTC 26796.dc.html" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">FTC 26796</a>
+          </div>
+        </div>
+        <a href="Actus.dc.html" style="font-weight:400; font-size:13px; color:#C7D2E8;">Actus</a>
+        <a href="Sponsors.dc.html" style="font-weight:600; font-size:13px; color:#fff; border-bottom:2px solid #D62828; padding-bottom:20px;">Sponsors</a>
+        <a href="Contact.dc.html" style="font-weight:400; font-size:13px; color:#C7D2E8;">Contact</a>
+      </nav>
+      <a href="Nous soutenir.dc.html" style="background:#fff; color:#0B1F3A; font-weight:600; font-size:12.5px; padding:8px 18px; border-radius:980px; white-space:nowrap;">Nous soutenir</a>
+    </header>
+    <section style="padding:56px 28px 64px; text-align:center;">
+      <h1 style="font-weight:700; font-size:clamp(32px,4vw,46px); letter-spacing:-0.02em; color:#fff; margin:0 0 14px;">Nos sponsors</h1>
+      <p style="font-size:16.5px; color:#A9B6D6; max-width:600px; margin:0 auto; line-height:1.55;">Merci à toutes les entreprises et organisations qui rendent l'aventure Robo'Lyon possible.</p>
+    </section>
+  </div>
+
+  <section style="padding:64px 28px 64px; max-width:1180px; margin:0 auto;">
+    <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:1px; background:#D2D2D7; border:1px solid #D2D2D7; border-radius:14px; overflow:hidden;">
+      <sc-for list="{{ sponsors }}" as="sp" hint-placeholder-count="24">
+        <div style="background:#fff; height:100px; display:flex; align-items:center; justify-content:center; padding:14px;">
+          <img src="{{ sp.file }}" alt="{{ sp.name }}" style="max-height:50px; max-width:100%; width:auto; object-fit:contain;">
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="background:#F5F5F7; padding:80px 28px;">
+    <div style="max-width:900px; margin:0 auto;">
+      <h2 style="font-weight:700; font-size:24px; letter-spacing:-0.015em; color:#1D1D1F; margin:0 0 16px;">Pourquoi nous soutenir ?</h2>
+      <p style="font-size:16px; line-height:1.7; color:#3A3A3C; margin:0 0 48px;">Votre soutien permet à des jeunes de la région de vivre une aventure humaine et technique unique, de développer des compétences en sciences, en ingénierie et en travail d'équipe, tout en représentant la France dans des compétitions internationales.</p>
+      <h2 style="font-weight:700; font-size:20px; letter-spacing:-0.01em; color:#1D1D1F; margin:0 0 24px;">Comment nous soutenir ?</h2>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:#D2D2D7; border:1px solid #D2D2D7; border-radius:16px; overflow:hidden;">
+        <div style="background:#fff; padding:22px;"><h3 style="font-weight:700; font-size:14.5px; color:#1D1D1F; margin:0 0 8px;">Ressources techniques</h3><p style="font-size:13px; color:#6E6E73; margin:0; line-height:1.55;">Matériel, expertise ou infrastructures.</p></div>
+        <div style="background:#fff; padding:22px;"><h3 style="font-weight:700; font-size:14.5px; color:#1D1D1F; margin:0 0 8px;">Mentorat</h3><p style="font-size:13px; color:#6E6E73; margin:0; line-height:1.55;">Accompagnement par des professionnels bénévoles.</p></div>
+        <div style="background:#fff; padding:22px;"><h3 style="font-weight:700; font-size:14.5px; color:#1D1D1F; margin:0 0 8px;">Don financier</h3><p style="font-size:13px; color:#6E6E73; margin:0; line-height:1.55;">Mécénat d'entreprise ou don ponctuel.</p></div>
+        <div style="background:#fff; padding:22px;"><h3 style="font-weight:700; font-size:14.5px; color:#1D1D1F; margin:0 0 8px;">Nos événements</h3><p style="font-size:13px; color:#6E6E73; margin:0; line-height:1.55;">Visibilité lors de nos compétitions publiques.</p></div>
+      </div>
+      <div style="text-align:center; margin-top:44px;">
+        <a href="Contact.dc.html" style="background:#D62828; color:#fff; font-weight:600; font-size:15px; padding:12px 26px; border-radius:980px; display:inline-block;">Nous contacter pour sponsoriser</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#F5F5F7; color:#6E6E73; padding:48px 28px 24px; border-top:1px solid #D2D2D7;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; margin-bottom:32px;">
+        <div>
+          <div style="display:flex; align-items:center; gap:9px; margin-bottom:14px;">
+            <img src="assets/img/brand/logo-robolyon-blue.svg" alt="Logo Robo'Lyon" style="height:20px;">
+            <span style="font-weight:600; font-size:14px; color:#1D1D1F;">Robo'Lyon</span>
+          </div>
+          <p style="font-size:13px; line-height:1.6; max-width:320px; margin:0;">Association loi 1901 de robotique de compétition FIRST®, basée à Neuville-sur-Saône. Première équipe française à avoir participé à la FRC.</p>
+        </div>
+        <div>
+          <h4 style="color:#1D1D1F; font-size:13px; font-weight:600; margin:0 0 14px;">Navigation</h4>
+          <div style="display:flex; flex-direction:column; gap:9px; font-size:13px;">
+            <a href="L'association.dc.html" style="color:#6E6E73;">L'association</a>
+            <a href="Nos équipes.dc.html" style="color:#6E6E73;">Nos équipes</a>
+            <a href="Actus.dc.html" style="color:#6E6E73;">Actus</a>
+            <a href="Sponsors.dc.html" style="color:#6E6E73;">Sponsors</a>
+            <a href="Contact.dc.html" style="color:#6E6E73;">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="color:#1D1D1F; font-size:13px; font-weight:600; margin:0 0 14px;">Contact</h4>
+          <div style="font-size:13px; line-height:1.7; margin-bottom:14px;">22 avenue Gambetta<br>69250 Neuville-sur-Saône<br><a href="mailto:contact@robolyon.com" style="color:#6E6E73;">contact@robolyon.com</a></div>
+          <div style="display:flex; gap:10px;">
+            <a href="#" aria-label="Instagram" style="width:30px; height:30px; border-radius:50%; background:#E8E8ED; display:flex; align-items:center; justify-content:center; font-size:11px; color:#1D1D1F; font-weight:600;">IG</a>
+            <a href="#" aria-label="Facebook" style="width:30px; height:30px; border-radius:50%; background:#E8E8ED; display:flex; align-items:center; justify-content:center; font-size:11px; color:#1D1D1F; font-weight:600;">FB</a>
+            <a href="#" aria-label="YouTube" style="width:30px; height:30px; border-radius:50%; background:#E8E8ED; display:flex; align-items:center; justify-content:center; font-size:11px; color:#1D1D1F; font-weight:600;">YT</a>
+            <a href="#" aria-label="LinkedIn" style="width:30px; height:30px; border-radius:50%; background:#E8E8ED; display:flex; align-items:center; justify-content:center; font-size:11px; color:#1D1D1F; font-weight:600;">in</a>
+          </div>
+        </div>
+      </div>
+      <div style="border-top:1px solid #D2D2D7; padding-top:16px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-size:12px;">
+        <span>© 2026 Robo'Lyon. Tous droits réservés.</span>
+        <a href="Espace admin.dc.html" style="color:#6E6E73;">Espace admin</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const files = [
+      ['01-SDRA.png','SDRA Lyon'], ['02-FIRST-FRANCE.png','FIRST France'], ['03-NDB.png','Lycée Notre Dame de Bellegarde'],
+      ['04-GROUPE-NOEL.png','Groupe Noël'], ['05-BBL.png','Groupe BBL'], ['07-immobiliere-de-Bellegarde.png','Immobilière de Bellegarde'],
+      ['08-EKOALU.png','EkoAlu'], ['09-LIONS-CLUB.png','Lions Club Val de Saône'], ['19-credit-Mutuel.png','Crédit Mutuel'],
+      ['20-HAAS.png','HAAS'], ['21-Rotary-Lyon.png','Rotary Lyon'], ['22-Mme-Cadeau.png','Mme Cadeau'],
+      ['23-eLCIA.png','eLCIA'], ['23-VAHLE.png','VAHLE'], ['27-Region-AURA.png','Région Auvergne-Rhône-Alpes'],
+      ['28-BIX.png','BIX'], ['29-CIC.png','CIC'], ['30-Epi-Fleuri.png',"L'Épi Fleuri"],
+      ['31-Main-Tendue-Perou.png','Main Tendue Pérou'], ['32-Terre-citoyenne-solidaire.png','Terre Citoyenne Solidaire'],
+      ['clasy.png','Clasy'], ['iDO_Logo_Colored.svg','iDO'], ['Kardol.png','Kardol'],
+      ['Logo-ADDE.png','ADDE'], ['leobotics.png','Leobotics'], ['logo-MAHP.png','MAHP'],
+      ['logo-SERFIM.png','SERFIM'], ['RiberryConseil.png','Riberry Conseil'], ['rs_france_logo.jpeg','RS France'],
+    ];
+    const sponsors = files.map(([file, name]) => ({ file: 'sponsors/' + file, name }));
+    return { sponsors };
+  }
+}
+
+</script>
+</body>
+</html>

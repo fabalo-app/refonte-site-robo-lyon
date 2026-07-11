@@ -1,0 +1,193 @@
+<?php
+/**
+ * Dictionnaire des textes fixes de l'interface (menus, boutons, titres génériques, labels).
+ * Le contenu éditorial (mission, bios, descriptions...) passe par edit_text()/text_i18n()
+ * dans helpers.php, qui gèrent leur propre variante anglaise stockée en base.
+ */
+$GLOBALS['RL_I18N'] = [
+    'fr' => [
+        'nav.accueil' => 'Accueil',
+        'nav.association' => "L'association",
+        'nav.histoire' => 'Notre histoire',
+        'nav.mentors' => 'Nos mentors',
+        'nav.activites' => 'Activités',
+        'nav.valeurs' => 'Valeurs',
+        'nav.missions' => 'Missions',
+        'nav.equipes' => 'Nos équipes',
+        'nav.ftc_all' => 'FTC — Toutes les équipes',
+        'nav.actus' => 'Actus',
+        'nav.sponsors' => 'Sponsors',
+        'nav.boutique' => 'Boutique',
+        'nav.contact' => 'Contact',
+        'nav.espace_admin' => 'Espace admin',
+        'nav.connexion_admin' => 'Connexion admin',
+        'nav.menu' => 'Ouvrir le menu',
+
+        'footer.navigation' => 'Navigation',
+        'footer.contact' => 'Contact',
+        'footer.follow' => 'Suivez-nous',
+        'footer.newsletter' => 'Newsletter',
+        'footer.newsletter_desc' => "Recevez les grandes actualités de l'association par e-mail (compétitions, portes ouvertes...).",
+        'footer.newsletter_button' => "S'inscrire",
+        'footer.newsletter_ok' => 'Merci, vous êtes inscrit·e !',
+        'footer.rights' => 'Tous droits réservés.',
+
+        'common.add' => 'Ajouter',
+        'common.cancel' => 'Annuler',
+        'common.save' => 'Enregistrer',
+        'common.send' => 'Envoyer',
+        'common.edit' => 'Modifier',
+        'common.delete' => 'Supprimer',
+        'common.back_to_teams' => '‹ Nos équipes',
+        'common.back_to_ftc' => '‹ Équipes FTC',
+        'common.order' => 'Commander',
+        'common.contact_to_order' => 'Nous contacter pour commander',
+        'common.loading' => 'Chargement du modèle 3D…',
+
+        'page.contact.title' => 'Contact',
+        'page.contact.name' => 'Nom',
+        'page.contact.email' => 'E-mail',
+        'page.contact.subject' => 'Sujet',
+        'page.contact.message' => 'Message',
+        'page.contact.send' => 'Envoyer le message',
+        'page.contact.coords' => 'Nos coordonnées',
+        'page.contact.address' => 'Adresse',
+        'page.contact.access' => 'Accès',
+        'page.contact.sent_title' => 'Message envoyé, merci !',
+        'page.contact.sent_desc' => 'Nous vous répondrons dès que possible.',
+
+        'page.equipes.title' => 'Nos équipes',
+        'page.sponsors.title' => 'Nos sponsors',
+        'page.actus.title' => 'Actualités & affiches',
+        'page.actus.empty_title' => 'Aucune actualité publiée pour le moment',
+        'page.actus.empty_desc' => "L'équipe communication met régulièrement à jour cette page. En attendant, suivez-nous sur les réseaux sociaux pour ne rien manquer de la saison.",
+        'page.association.title' => "L'association",
+        'page.boutique.title' => 'Boutique',
+        'page.boutique.empty_title' => 'Boutique bientôt disponible',
+        'page.boutique.empty_desc' => "Nous préparons notre boutique en ligne (goodies, vêtements aux couleurs de l'équipe...). Revenez bientôt !",
+
+        'robot.title' => 'Le robot, saison par saison',
+        'robot.weight' => 'Poids',
+        'robot.code' => 'Voir le code',
+        'robot.model' => 'Voir le modèle 3D',
+        'robot.add_model' => 'Ajouter un modèle 3D interactif',
+        'robot.replace_model' => 'Remplacer le modèle 3D',
+        'robot.palmares' => 'Palmarès',
+        'robot.team' => "L'équipe",
+        'robot.add_member' => '+ Ajouter un membre',
+
+        'lang.fr' => 'FR',
+        'lang.en' => 'EN',
+
+        'robot.section' => 'Le robot',
+        'assoc.since' => 'Depuis 2014',
+        'page.soutenir.title' => 'Nous soutenir',
+        'page.contact.error' => 'Merci de renseigner votre nom, un e-mail valide et un message.',
+        'team.active_one' => 'équipe active',
+        'team.active_many' => 'équipes actives',
+        'admin.mode_active' => 'Mode admin actif — double-cliquez un texte, une image ou une vidéo pour la modifier.',
+        'admin.logged_as' => 'Connecté en tant que',
+        'admin.enable_edit' => "Activer le mode édition",
+        'admin.disable_edit' => 'Repasser en vue publique',
+        'common.modified' => 'Modifié ✓',
+    ],
+    'en' => [
+        'nav.accueil' => 'Home',
+        'nav.association' => 'About us',
+        'nav.histoire' => 'Our story',
+        'nav.mentors' => 'Our mentors',
+        'nav.activites' => 'Activities',
+        'nav.valeurs' => 'Values',
+        'nav.missions' => 'Missions',
+        'nav.equipes' => 'Our teams',
+        'nav.ftc_all' => 'FTC — All teams',
+        'nav.actus' => 'News',
+        'nav.sponsors' => 'Sponsors',
+        'nav.boutique' => 'Shop',
+        'nav.contact' => 'Contact',
+        'nav.espace_admin' => 'Admin area',
+        'nav.connexion_admin' => 'Admin login',
+        'nav.menu' => 'Open menu',
+
+        'footer.navigation' => 'Navigation',
+        'footer.contact' => 'Contact',
+        'footer.follow' => 'Follow us',
+        'footer.newsletter' => 'Newsletter',
+        'footer.newsletter_desc' => "Get the association's major news by e-mail (competitions, open days...).",
+        'footer.newsletter_button' => 'Subscribe',
+        'footer.newsletter_ok' => "Thanks, you're subscribed!",
+        'footer.rights' => 'All rights reserved.',
+
+        'common.add' => 'Add',
+        'common.cancel' => 'Cancel',
+        'common.save' => 'Save',
+        'common.send' => 'Send',
+        'common.edit' => 'Edit',
+        'common.delete' => 'Delete',
+        'common.back_to_teams' => '‹ Our teams',
+        'common.back_to_ftc' => '‹ FTC teams',
+        'common.order' => 'Order',
+        'common.contact_to_order' => 'Contact us to order',
+        'common.loading' => 'Loading 3D model…',
+
+        'page.contact.title' => 'Contact',
+        'page.contact.name' => 'Name',
+        'page.contact.email' => 'Email',
+        'page.contact.subject' => 'Subject',
+        'page.contact.message' => 'Message',
+        'page.contact.send' => 'Send message',
+        'page.contact.coords' => 'Our details',
+        'page.contact.address' => 'Address',
+        'page.contact.access' => 'Getting here',
+        'page.contact.sent_title' => 'Message sent, thank you!',
+        'page.contact.sent_desc' => "We'll get back to you as soon as possible.",
+
+        'page.equipes.title' => 'Our teams',
+        'page.sponsors.title' => 'Our sponsors',
+        'page.actus.title' => 'News & posters',
+        'page.actus.empty_title' => 'No news published yet',
+        'page.actus.empty_desc' => 'The communications team updates this page regularly. In the meantime, follow us on social media so you don\'t miss anything this season.',
+        'page.association.title' => 'About us',
+        'page.boutique.title' => 'Shop',
+        'page.boutique.empty_title' => 'Shop coming soon',
+        'page.boutique.empty_desc' => "We're preparing our online shop (merch, team-colored apparel...). Check back soon!",
+
+        'robot.title' => 'The robot, season by season',
+        'robot.weight' => 'Weight',
+        'robot.code' => 'View the code',
+        'robot.model' => 'View 3D model',
+        'robot.add_model' => 'Add an interactive 3D model',
+        'robot.replace_model' => 'Replace 3D model',
+        'robot.palmares' => 'Achievements',
+        'robot.team' => 'The team',
+        'robot.add_member' => '+ Add a member',
+
+        'lang.fr' => 'FR',
+        'lang.en' => 'EN',
+
+        'robot.section' => 'The robot',
+        'assoc.since' => 'Since 2014',
+        'page.soutenir.title' => 'Support us',
+        'page.contact.error' => 'Please fill in your name, a valid e-mail address and a message.',
+        'team.active_one' => 'active team',
+        'team.active_many' => 'active teams',
+        'admin.mode_active' => 'Admin mode active — double-click any text, image or video to edit it.',
+        'admin.logged_as' => 'Logged in as',
+        'admin.enable_edit' => 'Turn on edit mode',
+        'admin.disable_edit' => 'Back to public view',
+        'common.modified' => 'Saved ✓',
+    ],
+];
+
+function current_lang(): string {
+    return (isset($_COOKIE['rl_lang']) && $_COOKIE['rl_lang'] === 'en') ? 'en' : 'fr';
+}
+
+/** Traduit une clé de l'interface (textes fixes, non éditables depuis l'admin). */
+function t(string $key, ?string $fallback = null): string {
+    $lang = current_lang();
+    return $GLOBALS['RL_I18N'][$lang][$key]
+        ?? $GLOBALS['RL_I18N']['fr'][$key]
+        ?? $fallback
+        ?? $key;
+}

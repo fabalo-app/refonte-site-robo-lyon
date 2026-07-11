@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Inter', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; color:#1D1D1F; }
+  a { color: #0066CC; text-decoration: none; }
+  a:hover { color: #0B1F3A; }
+  [data-dd]:hover [data-dd-line] { opacity: 1; }
+  [data-dd]:hover [data-dd-panel] { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+  [data-dd-panel] a:hover { background: #EEF3FF; }
+</style>
+</helmet>
+
+<div style="font-family:'Inter',-apple-system,sans-serif; background:#FFFFFF;" data-screen-label="L'association">
+
+  <div style="background:#0B1F3A;">
+    <header style="max-width:1180px; margin:0 auto; padding:0 28px; height:60px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
+      <a href="Accueil.dc.html" style="display:flex; align-items:center; gap:9px;">
+        <img src="assets/img/brand/logo-robolyon-blue.svg" alt="Logo Robo'Lyon" style="height:22px; width:auto; filter:brightness(0) invert(1);">
+        <span style="font-weight:600; font-size:14.5px; letter-spacing:-0.01em; color:#fff;">Robo'Lyon</span>
+      </a>
+      <nav style="display:flex; align-items:center; gap:30px;">
+        <a href="Accueil.dc.html" style="font-weight:400; font-size:13px; color:#C7D2E8;">Accueil</a>
+        <div data-dd style="position:relative; padding:8px 0;">
+          <a href="L'association.dc.html" style="display:flex; align-items:center; gap:5px; cursor:pointer; font-weight:600; font-size:13px; color:#fff;">L'association<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+          <div data-dd-line style="position:absolute; left:0; right:0; bottom:0; height:2px; background:#D62828;"></div>
+          <div data-dd-panel style="position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(4px); background:#fff; border-radius:12px; box-shadow:0 20px 44px rgba(11,31,58,0.18); padding:8px; min-width:190px; z-index:50; opacity:0; visibility:hidden; transition:opacity .15s, transform .15s;">
+            <a href="L'association.dc.html#histoire" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">Notre histoire</a>
+            <a href="L'association.dc.html#activites" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">Activités</a>
+            <a href="L'association.dc.html#valeurs" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">Valeurs</a>
+            <a href="L'association.dc.html#missions" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">Missions</a>
+          </div>
+        </div>
+        <div data-dd style="position:relative; padding:8px 0;">
+          <a href="Nos équipes.dc.html" style="display:flex; align-items:center; gap:5px; cursor:pointer; font-weight:400; font-size:13px; color:#C7D2E8;">Nos équipes<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+          <div data-dd-line style="position:absolute; left:0; right:0; bottom:0; height:2px; background:#D62828; opacity:0; transition:opacity .15s;"></div>
+          <div data-dd-panel style="position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(4px); background:#fff; border-radius:12px; box-shadow:0 20px 44px rgba(11,31,58,0.18); padding:8px; min-width:200px; z-index:50; opacity:0; visibility:hidden; transition:opacity .15s, transform .15s;">
+            <a href="FRC.dc.html" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">FRC — Équipe 5553</a>
+            <a href="FTC.dc.html" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">FTC — 4 équipes</a>
+            <a href="FTC 23147.dc.html" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">FTC 23147</a>
+            <a href="FTC 26762.dc.html" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">FTC 26762</a>
+            <a href="FTC 26796.dc.html" style="display:block; padding:11px 16px; border-radius:8px; font-weight:500; font-size:14px; color:#0B1F3A;">FTC 26796</a>
+          </div>
+        </div>
+        <a href="Actus.dc.html" style="font-weight:400; font-size:13px; color:#C7D2E8;">Actus</a>
+        <a href="Sponsors.dc.html" style="font-weight:400; font-size:13px; color:#C7D2E8;">Sponsors</a>
+        <a href="Contact.dc.html" style="font-weight:400; font-size:13px; color:#C7D2E8;">Contact</a>
+      </nav>
+      <a href="Nous soutenir.dc.html" style="background:#fff; color:#0B1F3A; font-weight:600; font-size:12.5px; padding:8px 18px; border-radius:980px; white-space:nowrap;">Nous soutenir</a>
+    </header>
+    <section style="padding:56px 28px 64px; text-align:center;">
+      <div style="font-weight:600; font-size:13.5px; color:#9FC4FF; margin-bottom:16px; text-transform:uppercase; letter-spacing:0.04em;">Depuis 2014</div>
+      <h1 style="font-weight:700; font-size:clamp(32px,4vw,46px); letter-spacing:-0.02em; color:#fff; margin:0 0 14px;">L'association</h1>
+      <p style="font-size:16.5px; color:#A9B6D6; max-width:600px; margin:0 auto; line-height:1.55;">Notre histoire, nos valeurs et nos missions — une aventure humaine et technique, portée par des jeunes et des bénévoles passionnés.</p>
+    </section>
+  </div>
+
+  <!-- ===== Histoire ===== -->
+  <section id="histoire" style="padding:72px 28px 64px; max-width:900px; margin:0 auto;">
+    <h2 style="font-weight:700; font-size:26px; letter-spacing:-0.015em; color:#1D1D1F; margin:0 0 24px;">Notre histoire</h2>
+    <p style="font-size:16.5px; line-height:1.7; color:#3A3A3C; margin:0 0 18px;">Robo'Lyon est une association de robotique basée au Lycée Notre Dame de Bellegarde, à Neuville-sur-Saône (69). Nous sommes fiers d'être <strong>la première équipe française à avoir participé à la FIRST® Robotics Competition</strong>, dès 2014.</p>
+    <p style="font-size:16.5px; line-height:1.7; color:#3A3A3C; margin:0 0 18px;">L'association réunit aujourd'hui environ <strong>40 membres</strong> : une trentaine d'élèves de collège et lycée (dont près d'un tiers de filles), accompagnés d'une dizaine de mentors — parents, enseignants, professionnels et anciens élèves.</p>
+    <p style="font-size:16.5px; line-height:1.7; color:#3A3A3C; margin:0 0 32px;">Nous proposons un parcours robotique innovant qui prépare les jeunes à des compétitions internationales de haut niveau, au sein de deux programmes FIRST® : la <strong>FRC</strong> (équipe 5553, en pause cette année) et la <strong>FTC</strong>, désormais forte de <strong>4 équipes</strong> — notre priorité de développement cette saison.</p>
+    <img src="assets/img/photos/team-photo.jpg" alt="L'équipe Robo'Lyon" style="width:100%; border-radius:20px; aspect-ratio:16/8; object-fit:cover; border:1px solid #D2D2D7;">
+  </section>
+
+  <!-- ===== Activités ===== -->
+  <section id="activites" style="background:#F5F5F7; padding:80px 28px;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <h2 style="font-weight:700; font-size:28px; letter-spacing:-0.015em; color:#1D1D1F; margin:0 0 8px; text-align:center;">Nos activités</h2>
+      <p style="color:#6E6E73; font-size:16px; margin:0 0 44px; text-align:center;">La robotique de compétition, c'est bien plus que construire un robot.</p>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:#D2D2D7; border:1px solid #D2D2D7; border-radius:16px; overflow:hidden;">
+        <div style="background:#fff; padding:30px;">
+          <h3 style="font-weight:700; font-size:17px; color:#1D1D1F; margin:0 0 10px; letter-spacing:-0.01em;">Technique</h3>
+          <p style="color:#6E6E73; font-size:14px; line-height:1.65; margin:0;">Imaginer un mécanisme, concevoir en CAO, prototyper, programmer, piloter le robot — CAO, découpe CNC, impression 3D et pneumatique.</p>
+        </div>
+        <div style="background:#fff; padding:30px;">
+          <h3 style="font-weight:700; font-size:17px; color:#1D1D1F; margin:0 0 10px; letter-spacing:-0.01em;">Communication</h3>
+          <p style="color:#6E6E73; font-size:14px; line-height:1.65; margin:0;">Animer les réseaux sociaux, faire vivre le site, produire de la documentation et des vidéos, trouver des sponsors, organiser des événements.</p>
+        </div>
+        <div style="background:#fff; padding:30px;">
+          <h3 style="font-weight:700; font-size:17px; color:#1D1D1F; margin:0 0 10px; letter-spacing:-0.01em;">Méthode</h3>
+          <p style="color:#6E6E73; font-size:14px; line-height:1.65; margin:0;">Une organisation agile : réunions hebdomadaires, petits groupes, suivi de projet — et le développement du travail d'équipe, de la résilience et de la prise de parole.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Valeurs ===== -->
+  <section id="valeurs" style="padding:80px 28px; max-width:1180px; margin:0 auto;">
+    <h2 style="font-weight:700; font-size:28px; letter-spacing:-0.015em; color:#1D1D1F; margin:0 0 20px; text-align:center;">Nos valeurs</h2>
+    <p style="color:#6E6E73; font-size:15.5px; max-width:680px; margin:0 auto 44px; text-align:center; line-height:1.7;">Nous partageons la philosophie du <em>Cooperative Professionalism®</em> de FIRST®, fondée sur le principe de Dr. Woodie Flowers : « Quand des professionnels appliquent leurs connaissances avec courtoisie, et que chacun agit avec intégrité et sensibilité, tout le monde y gagne et la société en profite. »</p>
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:0; border:1px solid #D2D2D7; border-radius:16px; overflow:hidden;">
+      <div style="padding:24px 14px; border-right:1px solid #D2D2D7; text-align:center;"><h3 style="font-weight:700; font-size:14.5px; color:#1D1D1F; margin:0 0 8px;">Découverte</h3><p style="font-size:12.5px; color:#6E6E73; margin:0; line-height:1.5;">Explorer de nouvelles compétences et de nouvelles idées.</p></div>
+      <div style="padding:24px 14px; border-right:1px solid #D2D2D7; text-align:center;"><h3 style="font-weight:700; font-size:14.5px; color:#1D1D1F; margin:0 0 8px;">Innovation</h3><p style="font-size:12.5px; color:#6E6E73; margin:0; line-height:1.5;">Créativité et persévérance pour résoudre des problèmes.</p></div>
+      <div style="padding:24px 14px; border-right:1px solid #D2D2D7; text-align:center;"><h3 style="font-weight:700; font-size:14.5px; color:#1D1D1F; margin:0 0 8px;">Impact</h3><p style="font-size:12.5px; color:#6E6E73; margin:0; line-height:1.5;">Mettre nos apprentissages au service d'un changement positif.</p></div>
+      <div style="padding:24px 14px; border-right:1px solid #D2D2D7; text-align:center;"><h3 style="font-weight:700; font-size:14.5px; color:#1D1D1F; margin:0 0 8px;">Inclusion</h3><p style="font-size:12.5px; color:#6E6E73; margin:0; line-height:1.5;">Se respecter et valoriser nos différences.</p></div>
+      <div style="padding:24px 14px; text-align:center;"><h3 style="font-weight:700; font-size:14.5px; color:#1D1D1F; margin:0 0 8px;">Travail d'équipe</h3><p style="font-size:12.5px; color:#6E6E73; margin:0; line-height:1.5;">Reconnaître la force du collectif et s'épanouir en collaborant.</p></div>
+    </div>
+  </section>
+
+  <!-- ===== Missions ===== -->
+  <section id="missions" style="background:#0B1F3A; padding:80px 28px;">
+    <div style="max-width:800px; margin:0 auto;">
+      <h2 style="font-weight:700; font-size:28px; letter-spacing:-0.015em; color:#fff; margin:0 0 32px; text-align:center;">Nos missions</h2>
+      <div style="display:flex; flex-direction:column; gap:18px; margin-bottom:32px;">
+        <div style="display:flex; gap:16px; align-items:flex-start; background:rgba(214,40,40,0.08); border-radius:12px; padding:16px 18px;"><span style="color:#D62828; font-weight:700; font-size:13px;">01</span><p style="margin:0; color:#C7D2E8; font-size:15.5px; line-height:1.6;"><strong style="color:#fff;">Susciter l'intérêt</strong> pour les sciences et la technologie auprès des jeunes de notre région.</p></div>
+        <div style="display:flex; gap:16px; align-items:flex-start; background:rgba(255,255,255,0.06); border-radius:12px; padding:16px 18px;"><span style="color:#D62828; font-weight:700; font-size:13px;">02</span><p style="margin:0; color:#C7D2E8; font-size:15.5px; line-height:1.6;"><strong style="color:#fff;">Faire rayonner FIRST®</strong> partout en France pour développer sa communauté.</p></div>
+        <div style="display:flex; gap:16px; align-items:flex-start; background:rgba(214,40,40,0.08); border-radius:12px; padding:16px 18px;"><span style="color:#D62828; font-weight:700; font-size:13px;">03</span><p style="margin:0; color:#C7D2E8; font-size:15.5px; line-height:1.6;"><strong style="color:#fff;">Accompagner la création</strong> de nouvelles équipes françaises de robotique.</p></div>
+        <div style="display:flex; gap:16px; align-items:flex-start; background:rgba(255,255,255,0.06); border-radius:12px; padding:16px 18px;"><span style="color:#D62828; font-weight:700; font-size:13px;">04</span><p style="margin:0; color:#C7D2E8; font-size:15.5px; line-height:1.6;"><strong style="color:#fff;">Renforcer les liens</strong> avec les autres organisations de robotique européennes.</p></div>
+        <div style="display:flex; gap:16px; align-items:flex-start; background:rgba(214,40,40,0.08); border-radius:12px; padding:16px 18px;"><span style="color:#D62828; font-weight:700; font-size:13px;">05</span><p style="margin:0; color:#C7D2E8; font-size:15.5px; line-height:1.6;"><strong style="color:#fff;">Développer une compétition régionale</strong> française de robotique.</p></div>
+      </div>
+      <p style="color:#A9B6D6; font-size:14.5px; line-height:1.7; text-align:center; margin:0;">Cette vision a notamment conduit au lancement de <strong style="color:#fff;">Robotique FIRST France</strong>, le 15 mars 2022 au Ministère de l'Industrie, avec Robo'Lyon comme moteur du projet.</p>
+    </div>
+  </section>
+
+  <footer style="background:#F5F5F7; color:#6E6E73; padding:48px 28px 24px; border-top:1px solid #D2D2D7;">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; margin-bottom:32px;">
+        <div>
+          <div style="display:flex; align-items:center; gap:9px; margin-bottom:14px;">
+            <img src="assets/img/brand/logo-robolyon-blue.svg" alt="Logo Robo'Lyon" style="height:20px;">
+            <span style="font-weight:600; font-size:14px; color:#1D1D1F;">Robo'Lyon</span>
+          </div>
+          <p style="font-size:13px; line-height:1.6; max-width:320px; margin:0;">Association loi 1901 de robotique de compétition FIRST®, basée à Neuville-sur-Saône. Première équipe française à avoir participé à la FRC.</p>
+        </div>
+        <div>
+          <h4 style="color:#1D1D1F; font-size:13px; font-weight:600; margin:0 0 14px;">Navigation</h4>
+          <div style="display:flex; flex-direction:column; gap:9px; font-size:13px;">
+            <a href="L'association.dc.html" style="color:#6E6E73;">L'association</a>
+            <a href="Nos équipes.dc.html" style="color:#6E6E73;">Nos équipes</a>
+            <a href="Actus.dc.html" style="color:#6E6E73;">Actus</a>
+            <a href="Sponsors.dc.html" style="color:#6E6E73;">Sponsors</a>
+            <a href="Contact.dc.html" style="color:#6E6E73;">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4 style="color:#1D1D1F; font-size:13px; font-weight:600; margin:0 0 14px;">Contact</h4>
+          <div style="font-size:13px; line-height:1.7; margin-bottom:14px;">22 avenue Gambetta<br>69250 Neuville-sur-Saône<br><a href="mailto:contact@robolyon.com" style="color:#6E6E73;">contact@robolyon.com</a></div>
+          <div style="display:flex; gap:10px;">
+            <a href="#" aria-label="Instagram" style="width:30px; height:30px; border-radius:50%; background:#E8E8ED; display:flex; align-items:center; justify-content:center; font-size:11px; color:#1D1D1F; font-weight:600;">IG</a>
+            <a href="#" aria-label="Facebook" style="width:30px; height:30px; border-radius:50%; background:#E8E8ED; display:flex; align-items:center; justify-content:center; font-size:11px; color:#1D1D1F; font-weight:600;">FB</a>
+            <a href="#" aria-label="YouTube" style="width:30px; height:30px; border-radius:50%; background:#E8E8ED; display:flex; align-items:center; justify-content:center; font-size:11px; color:#1D1D1F; font-weight:600;">YT</a>
+            <a href="#" aria-label="LinkedIn" style="width:30px; height:30px; border-radius:50%; background:#E8E8ED; display:flex; align-items:center; justify-content:center; font-size:11px; color:#1D1D1F; font-weight:600;">in</a>
+          </div>
+        </div>
+      </div>
+      <div style="border-top:1px solid #D2D2D7; padding-top:16px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-size:12px;">
+        <span>© 2026 Robo'Lyon. Tous droits réservés.</span>
+        <a href="Espace admin.dc.html" style="color:#6E6E73;">Espace admin</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+</body>
+</html>
