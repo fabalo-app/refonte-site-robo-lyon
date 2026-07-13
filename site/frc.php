@@ -102,7 +102,7 @@ require __DIR__ . '/includes/partials/head.php';
         <h2 style="font-weight:700; font-size:26px; color:#1D1D1F; margin:0; letter-spacing:-0.015em;"><?= h(t('robot.team')) ?></h2>
         <?php if (is_edit_mode()): ?><button class="rl-btn-add" data-action="add-member" data-team-id="<?= (int)$team['id'] ?>"><?= h(t('robot.add_member')) ?></button><?php endif; ?>
       </div>
-      <p style="color:#6E6E73; font-size:14.5px; margin:0 0 32px;">Rôles et responsables actuels.</p>
+      <p style="color:#6E6E73; font-size:14.5px; margin:0 0 32px;"><?= h(t('frc.team_subtitle')) ?></p>
       <div class="rl-g5" style="grid-template-columns:repeat(5,1fr); gap:16px;">
         <?php foreach ($members as $m): ?>
         <div style="background:#fff; border:1px solid #D2D2D7; border-radius:14px; padding:18px; text-align:center; position:relative;">
@@ -111,7 +111,7 @@ require __DIR__ . '/includes/partials/head.php';
             <?php if ($m['photo_path']): ?>
               <img src="<?= h(UPLOADS_URL . '/' . $m['photo_path']) ?>" alt="Photo de <?= h($m['name']) ?>" style="width:100%; height:100%; object-fit:cover;">
             <?php else: ?>
-              <span style="color:#9AA0A6; font-size:10px;">Photo</span>
+              <span style="color:#9AA0A6; font-size:10px;"><?= h(t('media.photo_placeholder')) ?></span>
             <?php endif; ?>
           </div>
           <?php edit_text('member.' . $m['id'] . '.name', $m['name'], 'div', 'font-weight:700; font-size:13.5px; color:#1D1D1F; margin-bottom:4px;'); ?>

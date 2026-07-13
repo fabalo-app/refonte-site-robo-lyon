@@ -21,7 +21,7 @@ require __DIR__ . '/includes/partials/head.php';
     <?php edit_text('assoc.histoire_p2', "L'association réunit aujourd'hui environ 40 membres : une trentaine d'élèves de collège et lycée (dont près d'un tiers de filles), accompagnés d'une dizaine de mentors — parents, enseignants, professionnels et anciens élèves.", 'p', 'font-size:16.5px; line-height:1.7; color:#3A3A3C; margin:0 0 18px;'); ?>
     <?php edit_text('assoc.histoire_p3', "Nous proposons un parcours robotique innovant qui prépare les jeunes à des compétitions internationales de haut niveau, au sein de deux programmes FIRST® : la FRC (équipe 5553, en pause cette année) et la FTC, désormais forte de plusieurs équipes — notre priorité de développement cette saison.", 'p', 'font-size:16.5px; line-height:1.7; color:#3A3A3C; margin:0 0 32px;'); ?>
     <div style="border-radius:20px; overflow:hidden; border:1px solid #D2D2D7; aspect-ratio:16/8;">
-      <?php render_media('assoc.histoire_media', "Photo de l'équipe"); ?>
+      <?php render_media('assoc.histoire_media', t('media.team_photo')); ?>
     </div>
   </section>
 
@@ -58,7 +58,7 @@ require __DIR__ . '/includes/partials/head.php';
           <?php if ($mt['photo_path']): ?>
             <img src="<?= h(UPLOADS_URL . '/' . $mt['photo_path']) ?>" alt="Photo de <?= h($mt['name']) ?>" style="width:100%; height:100%; object-fit:cover;">
           <?php else: ?>
-            <span style="color:#9AA0A6; font-size:10px;">Photo</span>
+            <span style="color:#9AA0A6; font-size:10px;"><?= h(t('media.photo_placeholder')) ?></span>
           <?php endif; ?>
         </div>
         <?php edit_text('mentor.' . $mt['id'] . '.name', $mt['name'], 'div', 'font-weight:700; font-size:14.5px; color:#1D1D1F; margin-bottom:4px;'); ?>
@@ -71,7 +71,7 @@ require __DIR__ . '/includes/partials/head.php';
   <section id="activites" style="background:#F5F5F7; padding:80px 28px;">
     <div style="max-width:1180px; margin:0 auto;">
       <h2 style="font-weight:700; font-size:28px; letter-spacing:-0.015em; color:#1D1D1F; margin:0 0 8px; text-align:center;"><?= h(t('nav.activites')) ?></h2>
-      <p style="color:#6E6E73; font-size:16px; margin:0 0 44px; text-align:center;">La robotique de compétition, c'est bien plus que construire un robot.</p>
+      <p style="color:#6E6E73; font-size:16px; margin:0 0 44px; text-align:center;"><?= h(t('assoc.activites_subtitle')) ?></p>
       <div class="rl-g3" style="grid-template-columns:repeat(3,1fr); gap:1px; background:#D2D2D7; border:1px solid #D2D2D7; border-radius:16px; overflow:hidden;">
         <?php
         $activites = [
@@ -92,7 +92,7 @@ require __DIR__ . '/includes/partials/head.php';
 
   <section id="valeurs" style="padding:80px 28px; max-width:1180px; margin:0 auto;">
     <h2 style="font-weight:700; font-size:28px; letter-spacing:-0.015em; color:#1D1D1F; margin:0 0 20px; text-align:center;"><?= h(t('nav.valeurs')) ?></h2>
-    <p style="color:#6E6E73; font-size:15.5px; max-width:680px; margin:0 auto 44px; text-align:center; line-height:1.7;">Nous partageons la philosophie du <em>Cooperative Professionalism®</em> de FIRST®, fondée sur le principe de Dr. Woodie Flowers : « Quand des professionnels appliquent leurs connaissances avec courtoisie, et que chacun agit avec intégrité et sensibilité, tout le monde y gagne et la société en profite. »</p>
+    <p style="color:#6E6E73; font-size:15.5px; max-width:680px; margin:0 auto 44px; text-align:center; line-height:1.7;"><?= t('assoc.valeurs_intro') ?></p>
     <div class="rl-g5" style="grid-template-columns:repeat(5,1fr); gap:0; border:1px solid #D2D2D7; border-radius:16px; overflow:hidden;">
       <?php
       $valeurs = [

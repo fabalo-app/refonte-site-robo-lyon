@@ -77,7 +77,7 @@ require __DIR__ . '/includes/partials/head.php';
           <?php if ($m['photo_path']): ?>
             <img src="<?= h(UPLOADS_URL . '/' . $m['photo_path']) ?>" alt="Photo de <?= h($m['name']) ?>" style="width:100%; height:100%; object-fit:cover;">
           <?php else: ?>
-            <span style="color:#9AA0A6; font-size:9px;">Photo</span>
+            <span style="color:#9AA0A6; font-size:9px;"><?= h(t('media.photo_placeholder')) ?></span>
           <?php endif; ?>
         </div>
         <?php edit_text('member.' . $m['id'] . '.name', $m['name'], 'div', 'font-weight:700; font-size:13px; color:#1D1D1F; margin-bottom:3px;'); ?>

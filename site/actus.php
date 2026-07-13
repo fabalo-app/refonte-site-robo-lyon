@@ -29,7 +29,7 @@ require __DIR__ . '/includes/partials/head.php';
           <?php if ($a['image_path']): ?>
             <img src="<?= h(UPLOADS_URL . '/' . $a['image_path']) ?>" alt="Affiche : <?= h($a['title']) ?>" style="width:100%; height:100%; object-fit:cover;">
           <?php else: ?>
-            <span style="color:#9AA0A6; font-size:12.5px;">Affiche à venir</span>
+            <span style="color:#9AA0A6; font-size:12.5px;"><?= h(t('actus.poster_soon')) ?></span>
           <?php endif; ?>
         </div>
         <div style="padding:20px;">

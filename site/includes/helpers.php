@@ -181,6 +181,11 @@ function team_count_label(int $n): string {
     return $n . ' ' . ($n > 1 ? t('team.active_many') : t('team.active_one'));
 }
 
+/** « N équipe(s) » (sans « active »), dans la langue courante — ex. titre "FTC — 4 équipes". */
+function team_noun(int $n): string {
+    return $n > 1 ? t('team.noun_many') : t('team.noun_one');
+}
+
 function slugify(string $s): string {
     $s = iconv('UTF-8', 'ASCII//TRANSLIT', $s) ?: $s;
     $s = strtolower(trim($s));
@@ -240,10 +245,10 @@ function render_document(string $key, string $labelDefault): void {
     if ($row) {
         echo '<a href="' . h(UPLOADS_URL . '/' . $row['path']) . '" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#D62828; color:#fff; font-weight:600; font-size:14.5px; padding:12px 24px; border-radius:980px;">📄 ' . h($labelDefault) . '</a>';
     } elseif (!is_edit_mode()) {
-        echo '<span style="color:#9AA0A6; font-size:14px;">Dossier à venir.</span>';
+        echo '<span style="color:#9AA0A6; font-size:14px;">' . h(t('document.soon')) . '</span>';
     }
     if (is_edit_mode()) {
-        echo '<button class="rl-btn-add" data-action="upload-document" data-key="' . h($key) . '">' . ($row ? '📎 Remplacer le PDF' : '📎 Envoyer le PDF') . '</button>';
+        echo '<button class="rl-btn-add" data-action="upload-document" data-key="' . h($key) . '">' . h($row ? t('document.replace') : t('document.upload')) . '</button>';
     }
     echo '</div>';
 }
