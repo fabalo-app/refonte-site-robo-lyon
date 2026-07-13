@@ -21,13 +21,13 @@ if ($existing->fetch()) {
     exit;
 }
 
-$tempPassword = bin2hex(random_bytes(6));
-$stmt = db()->prepare('INSERT INTO admins (email, password_hash, role) VALUES (?, ?, "communication")');
-$stmt->execute([$email, password_hash($tempPassword, PASSWORD_DEFAULT)]);
+// Pas de mot de passe généré : le compte reste en attente tant que la personne ne s'est
+// pas connectée une première fois avec cet e-mail pour choisir elle-même son mot de passe.
+$stmt = db()->prepare('INSERT INTO admins (email, password_hash, role) VALUES (?, NULL, "communication")');
+$stmt->execute([$email]);
 
 echo json_encode([
     'ok' => true,
     'id' => db()->lastInsertId(),
-    'temp_password' => $tempPassword,
-    'notice' => "Communiquez ce mot de passe temporaire à $email — il pourra le changer plus tard.",
+    'notice' => "Compte créé. Indiquez à $email d'aller sur la page de connexion avec cette adresse : il/elle pourra choisir son mot de passe à sa première connexion.",
 ]);

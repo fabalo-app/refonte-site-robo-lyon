@@ -20,7 +20,7 @@ $GLOBALS['RL_I18N'] = [
         'nav.boutique' => 'Boutique',
         'nav.contact' => 'Contact',
         'nav.espace_admin' => 'Espace admin',
-        'nav.connexion_admin' => 'Connexion admin',
+        'nav.connexion_admin' => 'Se connecter',
         'nav.menu' => 'Ouvrir le menu',
 
         'footer.navigation' => 'Navigation',
@@ -106,7 +106,7 @@ $GLOBALS['RL_I18N'] = [
         'nav.boutique' => 'Shop',
         'nav.contact' => 'Contact',
         'nav.espace_admin' => 'Admin area',
-        'nav.connexion_admin' => 'Admin login',
+        'nav.connexion_admin' => 'Log in',
         'nav.menu' => 'Open menu',
 
         'footer.navigation' => 'Navigation',

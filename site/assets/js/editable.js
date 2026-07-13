@@ -223,7 +223,7 @@
             <label>E-mail</label><input type="email" name="email" required>
           `, async (fd) => {
             const r = await postJSON('api/admins-add.php', { email: fd.get('email') });
-            alert('Compte créé.\nMot de passe temporaire : ' + r.temp_password + '\n\n' + r.notice);
+            alert(r.notice);
             location.reload();
           }, 'Ajouter');
         } else if (action === 'delete-admin') {

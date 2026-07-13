@@ -74,7 +74,7 @@ require __DIR__ . '/includes/partials/head.php';
     <div style="background:#fff; border:1px solid #D2D2D7; border-radius:16px; padding:22px; margin-bottom:24px;">
       <h3 style="font-weight:700; font-size:15px; margin:0 0 14px;">Ajouter un administrateur</h3>
       <button class="rl-btn-add" data-action="add-admin">+ Ajouter</button>
-      <p style="color:#8A93A3; font-size:12px; margin:12px 0 0;">La personne recevra un mot de passe temporaire à communiquer, limité à la modification des textes, images, actualités et sponsors.</p>
+      <p style="color:#8A93A3; font-size:12px; margin:12px 0 0;">Aucun mot de passe à communiquer : la personne choisira elle-même son mot de passe en se connectant pour la première fois avec cet e-mail. Accès limité à la modification des textes, images, actualités et sponsors.</p>
     </div>
     <?php endif; ?>
 
