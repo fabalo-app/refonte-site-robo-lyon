@@ -15,10 +15,15 @@ if (!$row) {
     echo json_encode(['error' => 'Administrateur introuvable.']);
     exit;
 }
+// Il doit toujours rester au moins un propriétaire.
 if ($row['role'] === 'owner') {
-    http_response_code(400);
-    echo json_encode(['error' => 'Impossible de retirer un propriétaire.']);
-    exit;
+    $countStmt = db()->prepare("SELECT COUNT(*) c FROM admins WHERE role = 'owner' AND id != ?");
+    $countStmt->execute([$id]);
+    if ((int) $countStmt->fetch()['c'] === 0) {
+        http_response_code(400);
+        echo json_encode(['error' => 'Impossible : il doit toujours rester au moins un propriétaire.']);
+        exit;
+    }
 }
 
 db()->prepare('DELETE FROM admins WHERE id = ?')->execute([$id]);

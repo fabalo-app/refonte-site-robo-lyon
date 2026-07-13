@@ -8,7 +8,12 @@ CREATE TABLE IF NOT EXISTS admins (
   email VARCHAR(190) NOT NULL UNIQUE,
   -- NULL tant que la personne invitée n'a pas encore choisi son mot de passe (voir login.php).
   password_hash VARCHAR(255) NULL,
+  -- Détermine les droits : "owner" = accès complet (contenu + gestion des comptes),
+  -- "communication" = édition du contenu du site uniquement, pas de gestion des comptes.
   role ENUM('owner','communication') NOT NULL DEFAULT 'communication',
+  -- Étiquette libre affichée dans la liste des admins (Dev, CAO, Communication...) — purement
+  -- informative, n'a aucun effet sur les droits (voir "role" ci-dessus).
+  title VARCHAR(100) NOT NULL DEFAULT 'Communication',
   created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

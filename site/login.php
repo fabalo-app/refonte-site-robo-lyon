@@ -36,8 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $error = "Un compte administrateur existe déjà, veuillez vous connecter.";
                 $isSetup = false;
             } else {
-                $stmt = db()->prepare('INSERT INTO admins (email, password_hash, role) VALUES (?, ?, ?)');
-                $stmt->execute([$email, password_hash($password, PASSWORD_DEFAULT), 'owner']);
+                $stmt = db()->prepare('INSERT INTO admins (email, password_hash, role, title) VALUES (?, ?, ?, ?)');
+                $stmt->execute([$email, password_hash($password, PASSWORD_DEFAULT), 'owner', 'Propriétaire']);
                 session_regenerate_id(true);
                 $_SESSION['admin_id'] = db()->lastInsertId();
                 $_SESSION['edit_mode'] = true;

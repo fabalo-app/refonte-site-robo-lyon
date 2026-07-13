@@ -6,6 +6,12 @@ csrf_check();
 
 $data = json_input();
 $email = trim((string)($data['email'] ?? ''));
+$title = trim((string)($data['title'] ?? ''));
+if ($title === '') {
+    $title = 'Communication';
+} elseif (mb_strlen($title) > 100) {
+    $title = mb_substr($title, 0, 100);
+}
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     http_response_code(400);
@@ -23,8 +29,9 @@ if ($existing->fetch()) {
 
 // Pas de mot de passe généré : le compte reste en attente tant que la personne ne s'est
 // pas connectée une première fois avec cet e-mail pour choisir elle-même son mot de passe.
-$stmt = db()->prepare('INSERT INTO admins (email, password_hash, role) VALUES (?, NULL, "communication")');
-$stmt->execute([$email]);
+// Rôle "communication" par défaut (droits limités) — modifiable ensuite via api/admins-update.php.
+$stmt = db()->prepare('INSERT INTO admins (email, password_hash, role, title) VALUES (?, NULL, "communication", ?)');
+$stmt->execute([$email, $title]);
 
 echo json_encode([
     'ok' => true,
