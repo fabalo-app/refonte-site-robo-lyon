@@ -20,7 +20,7 @@ $GLOBALS['RL_I18N'] = [
         'nav.boutique' => 'Boutique',
         'nav.contact' => 'Contact',
         'nav.espace_admin' => 'Espace admin',
-        'nav.connexion_admin' => 'Connexion admin',
+        'nav.connexion_admin' => 'Se connecter',
         'nav.menu' => 'Ouvrir le menu',
 
         'footer.navigation' => 'Navigation',
@@ -85,11 +85,40 @@ $GLOBALS['RL_I18N'] = [
         'page.contact.error' => 'Merci de renseigner votre nom, un e-mail valide et un message.',
         'team.active_one' => 'équipe active',
         'team.active_many' => 'équipes actives',
+        'team.noun_one' => 'équipe',
+        'team.noun_many' => 'équipes',
         'admin.mode_active' => 'Mode admin actif — double-cliquez un texte, une image ou une vidéo pour la modifier.',
         'admin.logged_as' => 'Connecté en tant que',
         'admin.enable_edit' => "Activer le mode édition",
         'admin.disable_edit' => 'Repasser en vue publique',
         'common.modified' => 'Modifié ✓',
+
+        'assoc.activites_subtitle' => "La robotique de compétition, c'est bien plus que construire un robot.",
+        'assoc.valeurs_intro' => 'Nous partageons la philosophie du <em>Cooperative Professionalism®</em> de FIRST®, fondée sur le principe de Dr. Woodie Flowers : « Quand des professionnels appliquent leurs connaissances avec courtoisie, et que chacun agit avec intégrité et sensibilité, tout le monde y gagne et la société en profite. »',
+        'sponsors.dossier_label' => 'Télécharger le dossier de sponsoring',
+        'document.soon' => 'Dossier à venir.',
+        'document.replace' => '📎 Remplacer le PDF',
+        'document.upload' => '📎 Envoyer le PDF',
+        'media.team_photo' => "Photo de l'équipe",
+        'media.map' => 'Carte à venir',
+        'media.hero_action' => "Glissez une photo ou vidéo d'action ici",
+        'media.photo_placeholder' => 'Photo',
+        'frc.team_subtitle' => 'Rôles et responsables actuels.',
+        'actus.poster_soon' => 'Affiche à venir',
+        'soutenir.jump_don' => 'Faire un don',
+        'soutenir.jump_mentor' => 'Devenir mentor',
+        'soutenir.jump_sponsor' => 'Devenir sponsor',
+
+        'title.home' => "Robo'Lyon — La robotique de compétition à Lyon",
+        'title.association' => "L'association — Robo'Lyon",
+        'title.equipes' => 'Nos équipes — Robo\'Lyon',
+        'title.actus' => "Actualités — Robo'Lyon",
+        'title.sponsors' => "Sponsors — Robo'Lyon",
+        'title.contact' => "Contact — Robo'Lyon",
+        'title.soutenir' => "Nous soutenir — Robo'Lyon",
+        'title.team_not_found' => "Équipe introuvable — Robo'Lyon",
+        'error.team_not_found' => 'Équipe introuvable',
+        'common.fr_fallback_tooltip' => 'Version anglaise à venir — affichage en français',
     ],
     'en' => [
         'nav.accueil' => 'Home',
@@ -106,7 +135,7 @@ $GLOBALS['RL_I18N'] = [
         'nav.boutique' => 'Shop',
         'nav.contact' => 'Contact',
         'nav.espace_admin' => 'Admin area',
-        'nav.connexion_admin' => 'Admin login',
+        'nav.connexion_admin' => 'Log in',
         'nav.menu' => 'Open menu',
 
         'footer.navigation' => 'Navigation',
@@ -171,16 +200,79 @@ $GLOBALS['RL_I18N'] = [
         'page.contact.error' => 'Please fill in your name, a valid e-mail address and a message.',
         'team.active_one' => 'active team',
         'team.active_many' => 'active teams',
+        'team.noun_one' => 'team',
+        'team.noun_many' => 'teams',
         'admin.mode_active' => 'Admin mode active — double-click any text, image or video to edit it.',
         'admin.logged_as' => 'Logged in as',
         'admin.enable_edit' => 'Turn on edit mode',
         'admin.disable_edit' => 'Back to public view',
         'common.modified' => 'Saved ✓',
+
+        'assoc.activites_subtitle' => 'Competitive robotics is about much more than just building a robot.',
+        'assoc.valeurs_intro' => "We share FIRST®'s <em>Cooperative Professionalism®</em> philosophy, based on Dr. Woodie Flowers' principle: “When professionals apply their knowledge with courtesy, and everyone acts with integrity and sensitivity, everybody wins and society benefits.”",
+        'sponsors.dossier_label' => 'Download the sponsorship packet',
+        'document.soon' => 'Document coming soon.',
+        'document.replace' => '📎 Replace the PDF',
+        'document.upload' => '📎 Upload a PDF',
+        'media.team_photo' => 'Team photo',
+        'media.map' => 'Map coming soon',
+        'media.hero_action' => 'Drop an action photo or video here',
+        'media.photo_placeholder' => 'Photo',
+        'frc.team_subtitle' => 'Current roles and leads.',
+        'actus.poster_soon' => 'Poster coming soon',
+        'soutenir.jump_don' => 'Make a donation',
+        'soutenir.jump_mentor' => 'Become a mentor',
+        'soutenir.jump_sponsor' => 'Become a sponsor',
+
+        'title.home' => "Robo'Lyon — Competitive robotics in Lyon",
+        'title.association' => "About us — Robo'Lyon",
+        'title.equipes' => "Our teams — Robo'Lyon",
+        'title.actus' => "News — Robo'Lyon",
+        'title.sponsors' => "Sponsors — Robo'Lyon",
+        'title.contact' => "Contact — Robo'Lyon",
+        'title.soutenir' => "Support us — Robo'Lyon",
+        'title.team_not_found' => "Team not found — Robo'Lyon",
+        'error.team_not_found' => 'Team not found',
+        'common.fr_fallback_tooltip' => 'English version coming soon — showing French',
     ],
 ];
 
+/**
+ * Langue courante : priorité absolue au choix explicite de l'utilisateur (cookie posé par un
+ * clic sur FR/EN, voir bootstrap.php). Sans ce cookie, on propose la langue préférée du
+ * navigateur (en-tête Accept-Language) — jamais mémorisé tant que l'utilisateur n'a pas
+ * lui-même choisi.
+ */
 function current_lang(): string {
-    return (isset($_COOKIE['rl_lang']) && $_COOKIE['rl_lang'] === 'en') ? 'en' : 'fr';
+    if (isset($_COOKIE['rl_lang'])) {
+        return $_COOKIE['rl_lang'] === 'en' ? 'en' : 'fr';
+    }
+    return detect_browser_lang();
+}
+
+/** Langue préférée du visiteur d'après l'en-tête HTTP Accept-Language ("fr-FR,fr;q=0.9,en;q=0.8" ...). */
+function detect_browser_lang(): string {
+    $header = $_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? '';
+    if ($header === '') {
+        return 'fr';
+    }
+    $best = null;
+    $bestQ = -1.0;
+    foreach (explode(',', $header) as $part) {
+        $part = trim($part);
+        if ($part === '') continue;
+        $bits = explode(';', $part);
+        $lang = strtolower(trim(explode('-', $bits[0])[0]));
+        $q = 1.0;
+        if (isset($bits[1]) && preg_match('/q=([0-9.]+)/', $bits[1], $m)) {
+            $q = (float) $m[1];
+        }
+        if ($q > $bestQ) {
+            $bestQ = $q;
+            $best = $lang;
+        }
+    }
+    return $best === 'en' ? 'en' : 'fr';
 }
 
 /** Traduit une clé de l'interface (textes fixes, non éditables depuis l'admin). */

@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/includes/bootstrap.php';
-$pageTitle = "FRC — Équipe 5553 — Robo'Lyon";
 $activePage = 'equipes';
 $team = db()->query("SELECT * FROM teams WHERE program='FRC' LIMIT 1")->fetch();
+$pageTitle = 'FRC — ' . $team['name'] . " — Robo'Lyon";
 $membersStmt = db()->prepare('SELECT * FROM team_members WHERE team_id = ? ORDER BY sort_order');
 $membersStmt->execute([$team['id']]);
 $members = $membersStmt->fetchAll();
@@ -45,7 +45,7 @@ require __DIR__ . '/includes/partials/head.php';
       <button class="rl-btn-add" data-action="edit-team-info" data-id="<?= (int)$team['id'] ?>" data-name="<?= h($team['name']) ?>" data-status="<?= h($team['status_label']) ?>" data-description="<?= h($team['description']) ?>" data-description-en="<?= h($team['description_en'] ?? '') ?>">✎ Modifier nom / statut / description</button>
     </div>
     <?php endif; ?>
-    <p style="font-size:16px; line-height:1.7; color:#3A3A3C; margin:0;"><?= h(team_description($team)) ?></p>
+    <?php render_team_description($team, 'p', 'font-size:16px; line-height:1.7; color:#3A3A3C; margin:0;'); ?>
   </section>
 
   <section style="background:#F5F5F7; padding:64px 28px;">
@@ -102,7 +102,7 @@ require __DIR__ . '/includes/partials/head.php';
         <h2 style="font-weight:700; font-size:26px; color:#1D1D1F; margin:0; letter-spacing:-0.015em;"><?= h(t('robot.team')) ?></h2>
         <?php if (is_edit_mode()): ?><button class="rl-btn-add" data-action="add-member" data-team-id="<?= (int)$team['id'] ?>"><?= h(t('robot.add_member')) ?></button><?php endif; ?>
       </div>
-      <p style="color:#6E6E73; font-size:14.5px; margin:0 0 32px;">Rôles et responsables actuels.</p>
+      <p style="color:#6E6E73; font-size:14.5px; margin:0 0 32px;"><?= h(t('frc.team_subtitle')) ?></p>
       <div class="rl-g5" style="grid-template-columns:repeat(5,1fr); gap:16px;">
         <?php foreach ($members as $m): ?>
         <div style="background:#fff; border:1px solid #D2D2D7; border-radius:14px; padding:18px; text-align:center; position:relative;">
@@ -111,7 +111,7 @@ require __DIR__ . '/includes/partials/head.php';
             <?php if ($m['photo_path']): ?>
               <img src="<?= h(UPLOADS_URL . '/' . $m['photo_path']) ?>" alt="Photo de <?= h($m['name']) ?>" style="width:100%; height:100%; object-fit:cover;">
             <?php else: ?>
-              <span style="color:#9AA0A6; font-size:10px;">Photo</span>
+              <span style="color:#9AA0A6; font-size:10px;"><?= h(t('media.photo_placeholder')) ?></span>
             <?php endif; ?>
           </div>
           <?php edit_text('member.' . $m['id'] . '.name', $m['name'], 'div', 'font-weight:700; font-size:13.5px; color:#1D1D1F; margin-bottom:4px;'); ?>

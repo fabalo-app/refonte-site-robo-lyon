@@ -48,24 +48,23 @@ require __DIR__ . '/includes/partials/head.php';
 
     <?php if ($me['role'] === 'owner'): ?>
     <div style="background:#fff; border:1px solid #D2D2D7; border-radius:16px; overflow-x:auto; margin-bottom:24px;">
-      <div style="display:grid; grid-template-columns:1fr 140px 140px 44px; min-width:560px; padding:14px 22px; font-size:12px; font-weight:700; color:#8A93A3; letter-spacing:0.02em; border-bottom:1px solid #D2D2D7;">
-        <div>E-MAIL</div><div>RÔLE</div><div>AJOUTÉ LE</div><div></div>
+      <div style="display:grid; grid-template-columns:1fr 160px 130px 88px; min-width:620px; padding:14px 22px; font-size:12px; font-weight:700; color:#8A93A3; letter-spacing:0.02em; border-bottom:1px solid #D2D2D7;">
+        <div>E-MAIL</div><div>ÉTIQUETTE</div><div>AJOUTÉ LE</div><div></div>
       </div>
       <?php foreach ($admins as $a): ?>
-      <div style="display:grid; grid-template-columns:1fr 140px 140px 44px; min-width:560px; align-items:center; padding:16px 22px; border-bottom:1px solid #EEEEF0; font-size:14.5px;">
+      <div style="display:grid; grid-template-columns:1fr 160px 130px 88px; min-width:620px; align-items:center; padding:16px 22px; border-bottom:1px solid #EEEEF0; font-size:14.5px;">
         <div style="font-weight:600;"><?= h($a['email']) ?></div>
         <div>
           <?php if ($a['role'] === 'owner'): ?>
-            <span style="color:#0066CC; background:#E5F0FF; font-weight:700; font-size:11px; padding:4px 12px; border-radius:980px;">Propriétaire</span>
+            <span style="color:#0066CC; background:#E5F0FF; font-weight:700; font-size:11px; padding:4px 12px; border-radius:980px;"><?= h($a['title']) ?></span>
           <?php else: ?>
-            <span style="color:#6E6E73; background:#F0F0F2; font-weight:700; font-size:11px; padding:4px 12px; border-radius:980px;">Communication</span>
+            <span style="color:#6E6E73; background:#F0F0F2; font-weight:700; font-size:11px; padding:4px 12px; border-radius:980px;"><?= h($a['title']) ?></span>
           <?php endif; ?>
         </div>
         <div style="color:#8A93A3; font-size:13px;"><?= h(date('M Y', strtotime($a['created_at']))) ?></div>
-        <div>
-          <?php if ($a['role'] !== 'owner'): ?>
+        <div style="display:flex; gap:6px;">
+          <button data-action="edit-admin" data-id="<?= (int)$a['id'] ?>" data-title="<?= h($a['title']) ?>" data-role="<?= h($a['role']) ?>" title="Modifier l'étiquette ou le rôle" style="width:28px; height:28px; border-radius:50%; border:none; background:#F0F0F2; color:#1D1D1F; font-size:12px; cursor:pointer;">✎</button>
           <button data-action="delete-admin" data-id="<?= (int)$a['id'] ?>" title="Retirer cet administrateur" style="width:28px; height:28px; border-radius:50%; border:none; background:#FCE8E8; color:#D62828; font-size:14px; font-weight:700; cursor:pointer;">×</button>
-          <?php endif; ?>
         </div>
       </div>
       <?php endforeach; ?>
@@ -74,7 +73,7 @@ require __DIR__ . '/includes/partials/head.php';
     <div style="background:#fff; border:1px solid #D2D2D7; border-radius:16px; padding:22px; margin-bottom:24px;">
       <h3 style="font-weight:700; font-size:15px; margin:0 0 14px;">Ajouter un administrateur</h3>
       <button class="rl-btn-add" data-action="add-admin">+ Ajouter</button>
-      <p style="color:#8A93A3; font-size:12px; margin:12px 0 0;">La personne recevra un mot de passe temporaire à communiquer, limité à la modification des textes, images, actualités et sponsors.</p>
+      <p style="color:#8A93A3; font-size:12px; margin:12px 0 0;">Aucun mot de passe à communiquer : la personne choisira elle-même son mot de passe en se connectant pour la première fois avec cet e-mail. L'étiquette (Dev, CAO, Communication...) sert juste à identifier qui fait quoi — seul le rôle « Propriétaire » donne accès à la gestion des comptes ; tout le reste peut modifier les textes, images, actualités et sponsors.</p>
     </div>
     <?php endif; ?>
 

@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/bootstrap.php';
-$pageTitle = "Contact — Robo'Lyon";
+$pageTitle = t('title.contact');
 $activePage = 'contact';
 
 $sent = false;
@@ -93,7 +93,7 @@ require __DIR__ . '/includes/partials/head.php';
         <?php edit_text('contact.access', "Depuis le centre de Lyon : bus TCL ligne 40. Depuis la gare de Lyon Part-Dieu : suivre les correspondances vers Neuville-sur-Saône.", 'div', 'color:#6E6E73; font-size:14px; line-height:1.6;'); ?>
       </div>
       <div style="aspect-ratio:16/9; border:1px solid #D2D2D7; border-radius:16px; overflow:hidden; margin-bottom:24px;">
-        <?php render_media('contact.map_media', 'Carte à venir'); ?>
+        <?php render_media('contact.map_media', t('media.map')); ?>
       </div>
       <div style="font-weight:700; font-size:13px; margin-bottom:10px;"><?= h(t('footer.follow')) ?></div>
       <div style="display:flex; gap:10px; margin-bottom:32px;">

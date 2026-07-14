@@ -10,6 +10,14 @@ input:focus, textarea:focus { outline: none; border-color: #0B1F3A; }
 [data-dd]:hover [data-dd-panel] { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
 [data-dd-panel] a:hover { background: #EEF3FF; }
 
+/* ===== Repli sur le français (traduction anglaise pas encore saisie) ===== */
+.rl-fr-fallback {
+  display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 0.03em;
+  color: inherit; opacity: 0.55; background: rgba(128,128,128,0.22);
+  border-radius: 4px; padding: 1px 5px; margin-left: 6px; vertical-align: middle;
+  cursor: help; user-select: none;
+}
+
 /* ===== Mode édition (admin) ===== */
 body.rl-edit-mode .rl-editable { cursor: text; border-radius: 4px; transition: outline .1s, background .1s; outline: 1px dashed transparent; outline-offset: 3px; }
 body.rl-edit-mode .rl-editable:hover { outline-color: #0066CC; background: rgba(0,102,204,0.06); }

@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/bootstrap.php';
-$pageTitle = "Nous soutenir — Robo'Lyon";
+$pageTitle = t('title.soutenir');
 $activePage = '';
 require __DIR__ . '/includes/partials/head.php';
 ?>
@@ -12,9 +12,9 @@ require __DIR__ . '/includes/partials/head.php';
       <h1 style="font-weight:700; font-size:clamp(32px,4vw,46px); letter-spacing:-0.02em; color:#fff; margin:0 0 14px;"><?= h(t('page.soutenir.title')) ?></h1>
       <?php edit_text('soutenir.hero_subtitle', "Don, mentorat ou sponsoring : chaque geste aide nos équipes à concevoir, construire et concourir chaque saison.", 'p', 'font-size:16.5px; color:#A9B6D6; max-width:600px; margin:0 auto; line-height:1.55;'); ?>
       <div class="rl-stack-mobile" style="display:flex; gap:24px; justify-content:center; margin-top:28px; flex-wrap:wrap;">
-        <a href="#don" style="color:#fff; font-weight:600; font-size:13.5px; border-bottom:2px solid #D62828; padding-bottom:4px;">Faire un don</a>
-        <a href="#mentor" style="color:#C7D2E8; font-weight:500; font-size:13.5px;">Devenir mentor</a>
-        <a href="#sponsor" style="color:#C7D2E8; font-weight:500; font-size:13.5px;">Devenir sponsor</a>
+        <a href="#don" style="color:#fff; font-weight:600; font-size:13.5px; border-bottom:2px solid #D62828; padding-bottom:4px;"><?= h(t('soutenir.jump_don')) ?></a>
+        <a href="#mentor" style="color:#C7D2E8; font-weight:500; font-size:13.5px;"><?= h(t('soutenir.jump_mentor')) ?></a>
+        <a href="#sponsor" style="color:#C7D2E8; font-weight:500; font-size:13.5px;"><?= h(t('soutenir.jump_sponsor')) ?></a>
       </div>
     </section>
   </div>

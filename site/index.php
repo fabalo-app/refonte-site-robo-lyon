@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/bootstrap.php';
-$pageTitle = "Robo'Lyon — La robotique de compétition à Lyon";
+$pageTitle = t('title.home');
 $activePage = 'accueil';
 require __DIR__ . '/includes/partials/head.php';
 ?>
@@ -21,7 +21,7 @@ require __DIR__ . '/includes/partials/head.php';
 
   <section style="padding:0 28px; max-width:980px; margin:-32px auto 0; position:relative;">
     <div style="aspect-ratio:16/6.6; border-radius:16px; overflow:hidden; border:1px solid #D2D2D7; box-shadow:0 20px 44px rgba(11,31,58,0.14);">
-      <?php render_media('home.hero_media', "Glissez une photo ou vidéo d'action ici"); ?>
+      <?php render_media('home.hero_media', t('media.hero_action')); ?>
     </div>
   </section>
 
@@ -64,7 +64,7 @@ require __DIR__ . '/includes/partials/head.php';
           <?php endif; ?>
           <div style="display:inline-block; font-size:11px; font-weight:700; color:#D62828; letter-spacing:0.03em; margin-bottom:12px; text-transform:uppercase; background:#FCE8E8; padding:5px 12px; border-radius:980px;"><?= h($frc['status_label']) ?></div>
           <h3 style="font-weight:700; font-size:19px; color:#1D1D1F; margin:0 0 10px; letter-spacing:-0.01em;">FRC — <?= h($frc['name']) ?></h3>
-          <p style="color:#6E6E73; font-size:14.5px; line-height:1.6; margin:0 0 16px;"><?= h(team_description($frc)) ?></p>
+          <?php render_team_description($frc, 'p', 'color:#6E6E73; font-size:14.5px; line-height:1.6; margin:0 0 16px;'); ?>
           <a href="frc.php" style="font-weight:600; font-size:14px;"><?php edit_text('home.frc_link', "Voir l'équipe FRC \u{a0}›", 'span'); ?></a>
         </div>
       </div>
@@ -74,7 +74,7 @@ require __DIR__ . '/includes/partials/head.php';
         </div>
         <div style="padding:28px;">
           <?php edit_text('home.ftc_card_badge', 'Équipes actives', 'div', 'display:inline-block; font-size:11px; font-weight:700; color:#0066CC; letter-spacing:0.03em; margin-bottom:12px; text-transform:uppercase; background:#E5F0FF; padding:5px 12px; border-radius:980px;'); ?>
-          <h3 style="font-weight:700; font-size:19px; color:#1D1D1F; margin:0 0 10px; letter-spacing:-0.01em;">FTC — <?= $ftcCount ?> équipe<?= $ftcCount > 1 ? 's' : '' ?></h3>
+          <h3 style="font-weight:700; font-size:19px; color:#1D1D1F; margin:0 0 10px; letter-spacing:-0.01em;">FTC — <?= $ftcCount ?> <?= h(team_noun($ftcCount)) ?></h3>
           <?php edit_text('home.ftc_card_desc', "Nos équipes FIRST® Tech Challenge, cœur de notre saison actuelle — le tremplin idéal pour découvrir la robotique dès le collège.", 'p', 'color:#6E6E73; font-size:14.5px; line-height:1.6; margin:0 0 16px;'); ?>
           <a href="ftc.php" style="font-weight:600; font-size:14px;"><?php edit_text('home.ftc_link', "Voir les équipes FTC \u{a0}›", 'span'); ?></a>
         </div>
@@ -97,7 +97,7 @@ require __DIR__ . '/includes/partials/head.php';
             <?php if ($a['image_path']): ?>
               <img src="<?= h(UPLOADS_URL . '/' . $a['image_path']) ?>" alt="Affiche : <?= h($a['title']) ?>" style="width:100%; height:100%; object-fit:cover;">
             <?php else: ?>
-              <span style="color:#9AA0A6; font-size:12.5px;">Affiche à venir</span>
+              <span style="color:#9AA0A6; font-size:12.5px;"><?= h(t('actus.poster_soon')) ?></span>
             <?php endif; ?>
           </div>
           <div style="padding:20px;">

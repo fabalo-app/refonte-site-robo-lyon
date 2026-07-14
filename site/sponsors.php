@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/bootstrap.php';
-$pageTitle = "Sponsors — Robo'Lyon";
+$pageTitle = t('title.sponsors');
 $activePage = 'sponsors';
 $sponsors = db()->query('SELECT * FROM sponsors ORDER BY sort_order')->fetchAll();
 require __DIR__ . '/includes/partials/head.php';
@@ -52,7 +52,7 @@ require __DIR__ . '/includes/partials/head.php';
       </div>
       <div class="rl-stack-mobile" style="text-align:center; margin-top:44px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
         <a href="contact.php" style="background:#D62828; color:#fff; font-weight:600; font-size:15px; padding:12px 26px; border-radius:980px; display:inline-block;"><?php edit_text('sponsors.cta', 'Nous contacter pour sponsoriser', 'span'); ?></a>
-        <?php render_document('sponsors.dossier', 'Télécharger le dossier de sponsoring'); ?>
+        <?php render_document('sponsors.dossier', t('sponsors.dossier_label')); ?>
       </div>
     </div>
   </section>

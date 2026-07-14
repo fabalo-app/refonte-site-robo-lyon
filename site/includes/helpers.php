@@ -23,15 +23,32 @@ function text(string $key, string $default): string {
 }
 
 /**
+ * Petit indicateur discret affiché à côté d'un contenu éditorial qui retombe sur sa version
+ * française faute de traduction anglaise saisie — pour que ça ne ressemble pas à un oubli.
+ * N'affiche jamais rien en français (seul le repli anglais->français est signalé).
+ */
+function fr_fallback_badge(): string {
+    $tip = h(t('common.fr_fallback_tooltip'));
+    return '<span class="rl-fr-fallback" title="' . $tip . '" aria-label="' . $tip . '">FR</span>';
+}
+
+/**
  * Affiche un bloc de texte éditable en mode admin (double-clic pour modifier).
  * $tag: balise HTML (span, h1, p, ...). $default: texte si aucune valeur enregistrée.
  * En anglais, édite automatiquement la variante "{$key}.en" — si elle est vide,
- * la version française s'affiche à la place (jamais de champ vide côté visiteur).
+ * la version française s'affiche à la place (jamais de champ vide côté visiteur), avec un
+ * petit badge "FR" discret pour signaler que la traduction reste à faire.
  */
 function edit_text(string $key, string $default, string $tag = 'span', string $style = ''): void {
+    $fellBackToFr = false;
     if (current_lang() === 'en') {
         $enValue = text($key . '.en', '');
-        $value = $enValue !== '' ? $enValue : text($key, $default);
+        if ($enValue !== '') {
+            $value = $enValue;
+        } else {
+            $value = text($key, $default);
+            $fellBackToFr = true;
+        }
         $storageKey = $key . '.en';
     } else {
         $value = text($key, $default);
@@ -39,6 +56,9 @@ function edit_text(string $key, string $default, string $tag = 'span', string $s
     }
     $styleAttr = $style !== '' ? ' style="' . h($style) . '"' : '';
     echo "<$tag data-edit-key=\"" . h($storageKey) . "\" class=\"rl-editable\"$styleAttr>" . h($value) . "</$tag>";
+    if ($fellBackToFr) {
+        echo fr_fallback_badge();
+    }
 }
 
 /** Récupère un média (image/vidéo/modèle 3D) éditable : ['kind'=>..., 'src'=>...] ou null si vide. */
@@ -176,9 +196,28 @@ function team_description(array $team): string {
     return $team['description'] ?? '';
 }
 
+/** true si on affiche la description en anglais faute de traduction saisie (repli sur le français). */
+function team_description_falls_back_to_fr(array $team): bool {
+    return current_lang() === 'en' && empty($team['description_en']) && !empty($team['description']);
+}
+
+/** Affiche la description d'une équipe, avec le badge "FR" discret si elle n'est pas encore traduite. */
+function render_team_description(array $team, string $tag = 'p', string $style = ''): void {
+    $styleAttr = $style !== '' ? ' style="' . h($style) . '"' : '';
+    echo "<$tag$styleAttr>" . h(team_description($team)) . "</$tag>";
+    if (team_description_falls_back_to_fr($team)) {
+        echo fr_fallback_badge();
+    }
+}
+
 /** Badge « N équipe(s) active(s) », dans la langue courante. */
 function team_count_label(int $n): string {
     return $n . ' ' . ($n > 1 ? t('team.active_many') : t('team.active_one'));
+}
+
+/** « N équipe(s) » (sans « active »), dans la langue courante — ex. titre "FTC — 4 équipes". */
+function team_noun(int $n): string {
+    return $n > 1 ? t('team.noun_many') : t('team.noun_one');
 }
 
 function slugify(string $s): string {
@@ -240,10 +279,10 @@ function render_document(string $key, string $labelDefault): void {
     if ($row) {
         echo '<a href="' . h(UPLOADS_URL . '/' . $row['path']) . '" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:#D62828; color:#fff; font-weight:600; font-size:14.5px; padding:12px 24px; border-radius:980px;">📄 ' . h($labelDefault) . '</a>';
     } elseif (!is_edit_mode()) {
-        echo '<span style="color:#9AA0A6; font-size:14px;">Dossier à venir.</span>';
+        echo '<span style="color:#9AA0A6; font-size:14px;">' . h(t('document.soon')) . '</span>';
     }
     if (is_edit_mode()) {
-        echo '<button class="rl-btn-add" data-action="upload-document" data-key="' . h($key) . '">' . ($row ? '📎 Remplacer le PDF' : '📎 Envoyer le PDF') . '</button>';
+        echo '<button class="rl-btn-add" data-action="upload-document" data-key="' . h($key) . '">' . h($row ? t('document.replace') : t('document.upload')) . '</button>';
     }
     echo '</div>';
 }

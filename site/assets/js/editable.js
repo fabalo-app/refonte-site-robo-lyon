@@ -221,11 +221,29 @@
         } else if (action === 'add-admin') {
           openModal('Ajouter un administrateur', `
             <label>E-mail</label><input type="email" name="email" required>
+            <label>Étiquette (Dev, CAO, Communication...)</label><input type="text" name="title" placeholder="Communication">
           `, async (fd) => {
-            const r = await postJSON('api/admins-add.php', { email: fd.get('email') });
-            alert('Compte créé.\nMot de passe temporaire : ' + r.temp_password + '\n\n' + r.notice);
+            const r = await postJSON('api/admins-add.php', { email: fd.get('email'), title: fd.get('title') });
+            alert(r.notice);
             location.reload();
           }, 'Ajouter');
+        } else if (action === 'edit-admin') {
+          openModal("Modifier l'administrateur", `
+            <label>Étiquette</label>
+            <input type="text" name="title" required value="${(btn.dataset.title || '').replace(/"/g, '&quot;')}">
+            <label>Rôle</label>
+            <select name="role">
+              <option value="communication" ${btn.dataset.role !== 'owner' ? 'selected' : ''}>Membre (édition du contenu)</option>
+              <option value="owner" ${btn.dataset.role === 'owner' ? 'selected' : ''}>Propriétaire (gestion des comptes)</option>
+            </select>
+          `, async (fd) => {
+            await postJSON('api/admins-update.php', {
+              id: btn.dataset.id,
+              title: fd.get('title'),
+              role: fd.get('role'),
+            });
+            location.reload();
+          }, T('common.save', 'Enregistrer'));
         } else if (action === 'delete-admin') {
           if (!confirm('Retirer cet administrateur ?')) return;
           await postJSON('api/admins-delete.php', { id: btn.dataset.id });

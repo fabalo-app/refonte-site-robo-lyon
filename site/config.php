@@ -1,11 +1,14 @@
 <?php
-// Renseignez ici les identifiants MySQL fournis par votre hébergeur (OVH, o2switch...).
-// Sur o2switch/OVH mutualisé, DB_HOST vaut souvent "localhost", et le nom de base / utilisateur
-// vous sont donnés dans votre panneau d'administration d'hébergement.
-define('DB_HOST', getenv('ROBOLYON_DB_HOST') ?: 'localhost');
+// Identifiants MySQL de production (hébergement InfinityFree).
+// Les valeurs après "?:" sont utilisées telles quelles en production. En local, définir les
+// variables d'environnement ROBOLYON_DB_* (voir README) prend le pas dessus pour pointer vers
+// une base de test sans toucher à ce fichier.
+define('DB_HOST', getenv('ROBOLYON_DB_HOST') ?: 'sql206.infinityfree.com');
 define('DB_PORT', getenv('ROBOLYON_DB_PORT') ?: '3306');
-define('DB_NAME', getenv('ROBOLYON_DB_NAME') ?: 'robolyon');
-define('DB_USER', getenv('ROBOLYON_DB_USER') ?: 'root');
+define('DB_NAME', getenv('ROBOLYON_DB_NAME') ?: 'if0_42397806_robolyon');
+define('DB_USER', getenv('ROBOLYON_DB_USER') ?: 'if0_42397806');
+// À REMPLIR UNIQUEMENT sur le serveur, directement depuis le File Manager InfinityFree — ne
+// jamais coller ce mot de passe ici en local ni le partager dans une conversation.
 define('DB_PASS', getenv('ROBOLYON_DB_PASS') ?: '');
 
 define('SITE_NAME', "Robo'Lyon");
