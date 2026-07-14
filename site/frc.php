@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/includes/bootstrap.php';
-$pageTitle = "FRC — Équipe 5553 — Robo'Lyon";
 $activePage = 'equipes';
 $team = db()->query("SELECT * FROM teams WHERE program='FRC' LIMIT 1")->fetch();
+$pageTitle = 'FRC — ' . $team['name'] . " — Robo'Lyon";
 $membersStmt = db()->prepare('SELECT * FROM team_members WHERE team_id = ? ORDER BY sort_order');
 $membersStmt->execute([$team['id']]);
 $members = $membersStmt->fetchAll();
@@ -45,7 +45,7 @@ require __DIR__ . '/includes/partials/head.php';
       <button class="rl-btn-add" data-action="edit-team-info" data-id="<?= (int)$team['id'] ?>" data-name="<?= h($team['name']) ?>" data-status="<?= h($team['status_label']) ?>" data-description="<?= h($team['description']) ?>" data-description-en="<?= h($team['description_en'] ?? '') ?>">✎ Modifier nom / statut / description</button>
     </div>
     <?php endif; ?>
-    <p style="font-size:16px; line-height:1.7; color:#3A3A3C; margin:0;"><?= h(team_description($team)) ?></p>
+    <?php render_team_description($team, 'p', 'font-size:16px; line-height:1.7; color:#3A3A3C; margin:0;'); ?>
   </section>
 
   <section style="background:#F5F5F7; padding:64px 28px;">

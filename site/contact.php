@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/bootstrap.php';
-$pageTitle = "Contact — Robo'Lyon";
+$pageTitle = t('title.contact');
 $activePage = 'contact';
 
 $sent = false;

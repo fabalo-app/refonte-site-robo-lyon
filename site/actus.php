@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/bootstrap.php';
-$pageTitle = "Actualités — Robo'Lyon";
+$pageTitle = t('title.actus');
 $activePage = 'actus';
 $actus = db()->query('SELECT * FROM actus ORDER BY published_at DESC, id DESC')->fetchAll();
 require __DIR__ . '/includes/partials/head.php';

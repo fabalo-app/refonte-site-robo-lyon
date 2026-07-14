@@ -31,7 +31,7 @@ require __DIR__ . '/includes/partials/head.php';
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A93A3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
           </div>
           <h2 style="font-weight:700; font-size:20px; color:#1D1D1F; margin:0 0 10px; letter-spacing:-0.01em;">FTC — <?= h($t['name']) ?></h2>
-          <p style="color:#6E6E73; font-size:14px; line-height:1.6; margin:0;"><?= h(team_description($t)) ?></p>
+          <?php render_team_description($t, 'p', 'color:#6E6E73; font-size:14px; line-height:1.6; margin:0;'); ?>
         </a>
       </div>
       <?php endforeach; ?>

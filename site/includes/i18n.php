@@ -108,6 +108,17 @@ $GLOBALS['RL_I18N'] = [
         'soutenir.jump_don' => 'Faire un don',
         'soutenir.jump_mentor' => 'Devenir mentor',
         'soutenir.jump_sponsor' => 'Devenir sponsor',
+
+        'title.home' => "Robo'Lyon — La robotique de compétition à Lyon",
+        'title.association' => "L'association — Robo'Lyon",
+        'title.equipes' => 'Nos équipes — Robo\'Lyon',
+        'title.actus' => "Actualités — Robo'Lyon",
+        'title.sponsors' => "Sponsors — Robo'Lyon",
+        'title.contact' => "Contact — Robo'Lyon",
+        'title.soutenir' => "Nous soutenir — Robo'Lyon",
+        'title.team_not_found' => "Équipe introuvable — Robo'Lyon",
+        'error.team_not_found' => 'Équipe introuvable',
+        'common.fr_fallback_tooltip' => 'Version anglaise à venir — affichage en français',
     ],
     'en' => [
         'nav.accueil' => 'Home',
@@ -212,11 +223,56 @@ $GLOBALS['RL_I18N'] = [
         'soutenir.jump_don' => 'Make a donation',
         'soutenir.jump_mentor' => 'Become a mentor',
         'soutenir.jump_sponsor' => 'Become a sponsor',
+
+        'title.home' => "Robo'Lyon — Competitive robotics in Lyon",
+        'title.association' => "About us — Robo'Lyon",
+        'title.equipes' => "Our teams — Robo'Lyon",
+        'title.actus' => "News — Robo'Lyon",
+        'title.sponsors' => "Sponsors — Robo'Lyon",
+        'title.contact' => "Contact — Robo'Lyon",
+        'title.soutenir' => "Support us — Robo'Lyon",
+        'title.team_not_found' => "Team not found — Robo'Lyon",
+        'error.team_not_found' => 'Team not found',
+        'common.fr_fallback_tooltip' => 'English version coming soon — showing French',
     ],
 ];
 
+/**
+ * Langue courante : priorité absolue au choix explicite de l'utilisateur (cookie posé par un
+ * clic sur FR/EN, voir bootstrap.php). Sans ce cookie, on propose la langue préférée du
+ * navigateur (en-tête Accept-Language) — jamais mémorisé tant que l'utilisateur n'a pas
+ * lui-même choisi.
+ */
 function current_lang(): string {
-    return (isset($_COOKIE['rl_lang']) && $_COOKIE['rl_lang'] === 'en') ? 'en' : 'fr';
+    if (isset($_COOKIE['rl_lang'])) {
+        return $_COOKIE['rl_lang'] === 'en' ? 'en' : 'fr';
+    }
+    return detect_browser_lang();
+}
+
+/** Langue préférée du visiteur d'après l'en-tête HTTP Accept-Language ("fr-FR,fr;q=0.9,en;q=0.8" ...). */
+function detect_browser_lang(): string {
+    $header = $_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? '';
+    if ($header === '') {
+        return 'fr';
+    }
+    $best = null;
+    $bestQ = -1.0;
+    foreach (explode(',', $header) as $part) {
+        $part = trim($part);
+        if ($part === '') continue;
+        $bits = explode(';', $part);
+        $lang = strtolower(trim(explode('-', $bits[0])[0]));
+        $q = 1.0;
+        if (isset($bits[1]) && preg_match('/q=([0-9.]+)/', $bits[1], $m)) {
+            $q = (float) $m[1];
+        }
+        if ($q > $bestQ) {
+            $bestQ = $q;
+            $best = $lang;
+        }
+    }
+    return $best === 'en' ? 'en' : 'fr';
 }
 
 /** Traduit une clé de l'interface (textes fixes, non éditables depuis l'admin). */

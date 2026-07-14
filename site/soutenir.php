@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/bootstrap.php';
-$pageTitle = "Nous soutenir — Robo'Lyon";
+$pageTitle = t('title.soutenir');
 $activePage = '';
 require __DIR__ . '/includes/partials/head.php';
 ?>

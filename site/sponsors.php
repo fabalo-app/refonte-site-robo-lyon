@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/bootstrap.php';
-$pageTitle = "Sponsors — Robo'Lyon";
+$pageTitle = t('title.sponsors');
 $activePage = 'sponsors';
 $sponsors = db()->query('SELECT * FROM sponsors ORDER BY sort_order')->fetchAll();
 require __DIR__ . '/includes/partials/head.php';

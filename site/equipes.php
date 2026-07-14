@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/bootstrap.php';
-$pageTitle = "Nos équipes — Robo'Lyon";
+$pageTitle = t('title.equipes');
 $activePage = 'equipes';
 require __DIR__ . '/includes/partials/head.php';
 
@@ -29,7 +29,7 @@ $ftcTeams = db()->query("SELECT * FROM teams WHERE program='FTC' ORDER BY sort_o
           <?php endif; ?>
           <div style="display:inline-block; font-size:11px; font-weight:700; color:#D62828; letter-spacing:0.03em; margin-bottom:12px; text-transform:uppercase; background:#FCE8E8; padding:5px 12px; border-radius:980px;"><?= h($frc['status_label']) ?></div>
           <h2 style="font-weight:700; font-size:22px; color:#1D1D1F; margin:0 0 10px; letter-spacing:-0.01em;">FRC — <?= h($frc['name']) ?></h2>
-          <p style="color:#6E6E73; font-size:14.5px; line-height:1.6; margin:0 0 16px;"><?= h(team_description($frc)) ?></p>
+          <?php render_team_description($frc, 'p', 'color:#6E6E73; font-size:14.5px; line-height:1.6; margin:0 0 16px;'); ?>
           <a href="frc.php" style="font-weight:600; font-size:14px; color:#0066CC;"><?php edit_text('equipes.frc_link', "Découvrir l'équipe FRC \u{a0}›", 'span'); ?></a>
         </div>
       </div>

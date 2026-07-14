@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/includes/bootstrap.php';
-$pageTitle = "Robo'Lyon — La robotique de compétition à Lyon";
+$pageTitle = t('title.home');
 $activePage = 'accueil';
 require __DIR__ . '/includes/partials/head.php';
 ?>
@@ -64,7 +64,7 @@ require __DIR__ . '/includes/partials/head.php';
           <?php endif; ?>
           <div style="display:inline-block; font-size:11px; font-weight:700; color:#D62828; letter-spacing:0.03em; margin-bottom:12px; text-transform:uppercase; background:#FCE8E8; padding:5px 12px; border-radius:980px;"><?= h($frc['status_label']) ?></div>
           <h3 style="font-weight:700; font-size:19px; color:#1D1D1F; margin:0 0 10px; letter-spacing:-0.01em;">FRC — <?= h($frc['name']) ?></h3>
-          <p style="color:#6E6E73; font-size:14.5px; line-height:1.6; margin:0 0 16px;"><?= h(team_description($frc)) ?></p>
+          <?php render_team_description($frc, 'p', 'color:#6E6E73; font-size:14.5px; line-height:1.6; margin:0 0 16px;'); ?>
           <a href="frc.php" style="font-weight:600; font-size:14px;"><?php edit_text('home.frc_link', "Voir l'équipe FRC \u{a0}›", 'span'); ?></a>
         </div>
       </div>

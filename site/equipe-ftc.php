@@ -8,9 +8,9 @@ $team = $stmt->fetch();
 
 if (!$team) {
     http_response_code(404);
-    $pageTitle = "Équipe introuvable — Robo'Lyon";
+    $pageTitle = t('title.team_not_found');
     require __DIR__ . '/includes/partials/head.php';
-    echo '<div style="max-width:600px; margin:80px auto; text-align:center; font-family:Inter,sans-serif;"><h1>Équipe introuvable</h1><p><a href="ftc.php">Retour aux équipes FTC</a></p></div>';
+    echo '<div style="max-width:600px; margin:80px auto; text-align:center; font-family:Inter,sans-serif;"><h1>' . h(t('error.team_not_found')) . '</h1><p><a href="ftc.php">' . h(t('common.back_to_ftc')) . '</a></p></div>';
     require __DIR__ . '/includes/partials/footer_minimal.php';
     exit;
 }
@@ -31,7 +31,7 @@ require __DIR__ . '/includes/partials/head.php';
       <div style="margin-bottom:20px;"><a href="ftc.php" style="font-weight:600; font-size:13px; color:#8FA0C4;"><?= h(t('common.back_to_ftc')) ?></a></div>
       <div style="display:inline-block; color:#0066CC; background:#fff; font-weight:700; font-size:11.5px; padding:5px 14px; border-radius:980px; text-transform:uppercase; letter-spacing:0.03em; margin-bottom:18px;"><?= h($team['status_label']) ?></div>
       <h1 style="font-weight:700; font-size:clamp(32px,4vw,46px); letter-spacing:-0.02em; color:#fff; margin:0 0 14px;">FTC — <?= h($team['name']) ?></h1>
-      <p style="font-size:16.5px; color:#A9B6D6; max-width:640px; margin:0 auto; line-height:1.55;"><?= h(team_description($team)) ?></p>
+      <?php render_team_description($team, 'p', 'font-size:16.5px; color:#A9B6D6; max-width:640px; margin:0 auto; line-height:1.55;'); ?>
     </section>
   </div>
 
